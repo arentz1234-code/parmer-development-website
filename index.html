@@ -119,7 +119,9 @@
 .featureItem strong{display:block;font-size:13px;letter-spacing:.02em}
 .featureItem span{display:block;font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.5}
 @media(max-width:850px){.featureStripGrid{flex-direction:column;gap:20px}.heroScroll{display:none}}
-</style></head>
+</style><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
 <body>
 <header id="header"><div class="container nav"><a href="#top"><img alt="Parmer Development" class="brandLogo" src="assets/parmer-logo-white-master.png"/></a><nav class="links" id="navLinks"><a href="about-parmer.html">Our Story</a><span class="communityNav"><a href="#portfolio">Communities ▾</a><span class="communityMenu"><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase III</a></span></span><a href="#commercial">Commercial</a><span class="communityNav"><a href="richland-village.html#tour">Virtual Tours ▾</a><span class="communityMenu"><a href="richland-village.html#tour">Richland Village</a><a href="judd-cottages.html#tour">Judd Avenue Cottages</a></span></span><a href="#contact">Contact</a><button class="btn ghost" data-open-modal="">Apply</button></nav><button aria-label="Open menu" class="menuBtn" id="menuBtn">☰</button></div></header>
 <main id="top">
@@ -136,6 +138,101 @@
 <section id="auburn"><div class="container"><div class="eyebrow">The Auburn Feeling</div><h2 class="sectionTitle">Rooted in Auburn. Connected to Everyday Life.</h2><p class="lead" style="max-width:800px">Explore Parmer communities across Auburn and see how each location connects residents to the places, businesses, and everyday experiences that make Auburn feel like home.</p><div class="mapWrap"><div><button class="mapChoice active" data-map="https://www.google.com/maps?q=152%20Bragg%20Ave%2C%20Auburn%2C%20AL&amp;output=embed">Bragg Avenue Brownstones<br/><small>152 Bragg Ave</small></button><button class="mapChoice" data-map="https://www.google.com/maps?q=538%20Richland%20Road%2C%20Auburn%2C%20AL&amp;output=embed">Richland Village<br/><small>538 Richland Road</small></button><button class="mapChoice" data-map="https://www.google.com/maps?q=533%20Judd%20Ave%2C%20Auburn%2C%20AL&amp;output=embed">Judd Avenue Cottages<br/><small>533 Judd Ave</small></button><button class="mapChoice" data-map="https://www.google.com/maps?q=1256%20Shug%20Jordan%20Parkway%2C%20Auburn%2C%20AL&amp;output=embed">Richland Village Phase III<br/><small>1256 Shug Jordan Parkway</small></button></div><iframe class="auburnMap" id="auburnMap" loading="lazy" src="https://www.google.com/maps?q=152%20Bragg%20Ave%2C%20Auburn%2C%20AL&amp;output=embed"></iframe></div></div></section>
 <section style="background:#f4f1ec"><div class="container"><div class="eyebrow">Follow Parmer</div><h2 class="sectionTitle" style="font-size:38px">See what's taking shape.</h2><div class="socialRow"><a class="socialCard" href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener"><span class="instaBadge"><svg aria-hidden="true" viewbox="0 0 24 24" width="22" height="22"><rect fill="none" height="18" rx="5" stroke="#fff" stroke-width="2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="#fff" stroke-width="2"></circle><circle cx="17.5" cy="6.5" fill="#fff" r="1.2"></circle></svg></span><span class="socialText"><strong>@parmer_development</strong><span>Follow on Instagram</span></span></a><a class="socialCard" href="https://www.instagram.com/braggavenuebrownstones/" target="_blank" rel="noopener"><span class="instaBadge"><svg aria-hidden="true" viewbox="0 0 24 24" width="22" height="22"><rect fill="none" height="18" rx="5" stroke="#fff" stroke-width="2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="#fff" stroke-width="2"></circle><circle cx="17.5" cy="6.5" fill="#fff" r="1.2"></circle></svg></span><span class="socialText"><strong>@braggavenuebrownstones</strong><span>Follow on Instagram</span></span></a><a class="socialCard" href="https://www.instagram.com/richlandvillageauburn/" target="_blank" rel="noopener"><span class="instaBadge"><svg aria-hidden="true" viewbox="0 0 24 24" width="22" height="22"><rect fill="none" height="18" rx="5" stroke="#fff" stroke-width="2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="#fff" stroke-width="2"></circle><circle cx="17.5" cy="6.5" fill="#fff" r="1.2"></circle></svg></span><span class="socialText"><strong>@richlandvillageauburn</strong><span>Follow on Instagram</span></span></a></div></div></section>
 <section class="cta" id="contact"><div class="container"><h2>Find Your Place in Auburn.</h2><p>Whether you’re looking for a home, a place for your business, or a partner for what comes next, come be part of a community designed to feel welcoming from the start.</p><button class="btn orange" data-open-modal="">Get In Touch</button></div></section>
+
+<section id="legacy" style="padding:90px 0 80px;background:#f5f2ed">
+  <div class="container">
+    <p style="text-align:center;font-family:var(--serif);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c8964c;margin:0 0 10px">9 Years · Auburn, Alabama</p>
+    <h2 style="text-align:center;font-family:var(--serif);font-size:clamp(28px,4vw,44px);color:#061d2b;margin:0 0 14px;font-weight:400">Our Development Legacy</h2>
+    <p style="text-align:center;max-width:580px;margin:0 auto 36px;color:#666;font-size:15px;line-height:1.7">From single-family cottages to mixed-use communities — every project Parmer has built across Auburn.</p>
+
+    <div style="display:flex;justify-content:center;gap:10px;margin-bottom:30px;flex-wrap:wrap">
+      <button onclick="pmFilter('all')" id="pmBtn-all" style="padding:9px 22px;border-radius:100px;border:1.5px solid #061d2b;background:#061d2b;color:#fff;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:all .2s">All Projects</button>
+      <button onclick="pmFilter('active')" id="pmBtn-active" style="padding:9px 22px;border-radius:100px;border:1.5px solid #c8964c;background:transparent;color:#c8964c;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:all .2s">Active Communities</button>
+      <button onclick="pmFilter('completed')" id="pmBtn-completed" style="padding:9px 22px;border-radius:100px;border:1.5px solid #888;background:transparent;color:#555;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:all .2s">Completed</button>
+    </div>
+
+    <div id="legacyMap" style="height:520px;border-radius:18px;overflow:hidden;box-shadow:0 12px 48px rgba(6,29,43,.14)"></div>
+
+    <div style="display:flex;gap:28px;justify-content:center;margin-top:22px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:#555">
+        <span style="width:13px;height:13px;border-radius:50%;background:#c8964c;flex-shrink:0;display:inline-block"></span>Active Community
+      </div>
+      <div style="display:flex;align-items:center;gap:9px;font-size:13px;color:#555">
+        <span style="width:13px;height:13px;border-radius:50%;background:#061d2b;flex-shrink:0;display:inline-block"></span>Completed Project
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var map = L.map('legacyMap',{scrollWheelZoom:false}).setView([32.609,-85.484],14);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    maxZoom:19
+  }).addTo(map);
+
+  function mkIcon(color){
+    return L.divIcon({
+      className:'',
+      html:'<div style="width:18px;height:18px;border-radius:50%;background:'+color+';border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.35)"></div>',
+      iconSize:[18,18],iconAnchor:[9,9],popupAnchor:[0,-12]
+    });
+  }
+
+  var activeIcon=mkIcon('#c8964c');
+  var doneIcon=mkIcon('#061d2b');
+
+  var projects=[
+    {n:'Bragg Brownstones',a:'350 Bragg Ave, Auburn, AL',s:'active',lat:32.6073,lng:-85.4827,d:'Luxury townhomes in the heart of Uptown Auburn — steps from dining, shops, and campus.'},
+    {n:'Judd Cottages',a:'Judd Ave, Auburn, AL',s:'active',lat:32.5990,lng:-85.4872,d:'A 16-cottage community bringing refined cottage-style living to south Auburn.'},
+    {n:'Richland Village',a:'Auburn, AL',s:'active',lat:32.6041,lng:-85.4868,d:'Mixed-use retail and townhomes — Parmer's most diverse community concept.'},
+    {n:'Hollytree Homes',a:'Auburn, AL',s:'completed',lat:32.6205,lng:-85.4885,d:'Single-family home development in north Auburn.'},
+    {n:'Breckenridge Court Homes',a:'Breckenridge Ct, Auburn, AL',s:'completed',lat:32.6172,lng:-85.4870,d:'Four custom homes on Breckenridge Court.'},
+    {n:'The Arbors',a:'Auburn, AL',s:'completed',lat:32.6183,lng:-85.4918,d:'30-lot residential subdivision in north Auburn.'},
+    {n:'Canton Avenue Redevelopment',a:'Canton Ave, Auburn, AL',s:'completed',lat:32.6138,lng:-85.4932,d:'Full redevelopment of the Canton Avenue corridor.'},
+    {n:'White Street Cottages',a:'White St, Auburn, AL',s:'completed',lat:32.6108,lng:-85.4792,d:'Charming cottage-style homes on White Street.'},
+    {n:'White Street Townhomes',a:'White St, Auburn, AL',s:'completed',lat:32.6114,lng:-85.4796,d:'Townhome development on White Street.'},
+    {n:'Sanders Townhomes',a:'Sanders St, Auburn, AL',s:'completed',lat:32.6132,lng:-85.4843,d:'Multi-unit townhome community on Sanders Street.'},
+    {n:'Sanders Twinhomes',a:'Sanders St, Auburn, AL',s:'completed',lat:32.6126,lng:-85.4848,d:'Twin-home development on Sanders Street.'},
+    {n:'152 Bragg Acquisition',a:'152 Bragg Ave, Auburn, AL',s:'completed',lat:32.6082,lng:-85.4835,d:'Strategic land acquisition on Bragg Avenue.'},
+    {n:'Cecil Lane Acquisition',a:'Cecil Ln, Auburn, AL',s:'completed',lat:32.6058,lng:-85.4818,d:'Land acquisition on Cecil Lane.'},
+    {n:'350 Bragg — Uptown',a:'350 Bragg Ave, Auburn, AL',s:'completed',lat:32.6068,lng:-85.4823,d:'Original Uptown vision: townhome lots with mixed-use ground floor.'},
+    {n:'Judd Avenue Cottages',a:'Judd Ave, Auburn, AL',s:'completed',lat:32.5984,lng:-85.4878,d:'Original 16-cottage subdivision on Judd Avenue.'},
+    {n:'The Richland Village (Phase 1)',a:'Auburn, AL',s:'completed',lat:32.6036,lng:-85.4865,d:'Mixed-use retail and 10 townhomes — the seed of the Richland concept.'}
+  ];
+
+  var markers=[];
+
+  projects.forEach(function(p){
+    var icon=p.s==='active'?activeIcon:doneIcon;
+    var label=p.s==='active'?'<span style="color:#c8964c;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700">Active Community</span>':'<span style="color:#999;font-size:10px;text-transform:uppercase;letter-spacing:.1em">Completed Project</span>';
+    var m=L.marker([p.lat,p.lng],{icon:icon})
+      .bindPopup('<div style="font-family:-apple-system,sans-serif;min-width:190px;padding:4px 2px">'+label+'<div style="font-size:15px;font-weight:700;color:#061d2b;margin:5px 0 3px;line-height:1.3">'+p.n+'</div><div style="font-size:11px;color:#aaa;margin-bottom:9px">'+p.a+'</div><div style="font-size:13px;color:#555;line-height:1.55">'+p.d+'</div></div>',{maxWidth:240})
+      .addTo(map);
+    markers.push({m:m,s:p.s});
+  });
+
+  window.pmFilter=function(f){
+    ['all','active','completed'].forEach(function(k){
+      var btn=document.getElementById('pmBtn-'+k);
+      if(k===f){
+        btn.style.background=k==='active'?'#c8964c':k==='completed'?'#555':'#061d2b';
+        btn.style.color='#fff';
+        btn.style.borderColor=k==='active'?'#c8964c':k==='completed'?'#555':'#061d2b';
+      } else {
+        btn.style.background='transparent';
+        btn.style.color=k==='active'?'#c8964c':k==='completed'?'#555':'#061d2b';
+        btn.style.borderColor=k==='active'?'#c8964c':k==='completed'?'#888':'#061d2b';
+      }
+    });
+    markers.forEach(function(obj){
+      if(f==='all'||f===obj.s){ obj.m.addTo(map); }
+      else { map.removeLayer(obj.m); }
+    });
+  };
+})();
+</script>
 </main>
 <footer><div class="container"><div class="footerGrid"><div><img alt="Parmer Development" class="footerSameLogo" src="assets/parmer-logo-white-master.png"/><p style="margin-top:24px;max-width:270px">Auburn, Alabama based real estate development company creating communities that stand the test of time.</p></div><div><h4>Navigation</h4><a href="about-parmer.html">About</a><a href="#communities">Communities</a><a href="#commercial">Commercial</a><a href="#investors">Investors</a><a href="#news">News</a><a href="#contact">Contact</a></div><div><h4>Communities</h4><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase 3</a></div><div><h4>Contact</h4><p>Auburn, Alabama</p><a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a><a href="tel:+13347502059">(334) 750-2059</a></div></div><div class="copyright">© 2026 Parmer Development. All Rights Reserved.</div></div></footer>
 <div class="stickyCta"><a href="#communities">Communities</a><button data-open-modal="">Apply</button></div>
