@@ -121,6 +121,7 @@
 @media(max-width:850px){.featureStripGrid{flex-direction:column;gap:20px}.heroScroll{display:none}}
 </style><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>.leaflet-container img{max-width:none!important;max-height:none!important;display:inline!important;width:auto!important;height:auto!important;object-fit:unset!important;position:static!important;transform:none!important;transition:none!important}.leaflet-tile{width:256px!important;height:256px!important}</style>
 </head>
 <body>
 <header id="header"><div class="container nav"><a href="#top"><img alt="Parmer Development" class="brandLogo" src="assets/parmer-logo-white-master.png"/></a><nav class="links" id="navLinks"><a href="about-parmer.html">Our Story</a><span class="communityNav"><a href="#portfolio">Communities ▾</a><span class="communityMenu"><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase III</a></span></span><a href="#commercial">Commercial</a><span class="communityNav"><a href="richland-village.html#tour">Virtual Tours ▾</a><span class="communityMenu"><a href="richland-village.html#tour">Richland Village</a><a href="judd-cottages.html#tour">Judd Avenue Cottages</a></span></span><a href="#contact">Contact</a><button class="btn ghost" data-open-modal="">Apply</button></nav><button aria-label="Open menu" class="menuBtn" id="menuBtn">☰</button></div></header>
@@ -165,9 +166,9 @@
 </section>
 
 <script>
-(function(){
+window.addEventListener('load',function(){
   var map = L.map('legacyMap',{scrollWheelZoom:false}).setView([32.609,-85.484],14);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',{
     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
     maxZoom:19
   }).addTo(map);
@@ -231,7 +232,7 @@
       else { map.removeLayer(obj.m); }
     });
   };
-})();
+});
 </script>
 </main>
 <footer><div class="container"><div class="footerGrid"><div><img alt="Parmer Development" class="footerSameLogo" src="assets/parmer-logo-white-master.png"/><p style="margin-top:24px;max-width:270px">Auburn, Alabama based real estate development company creating communities that stand the test of time.</p></div><div><h4>Navigation</h4><a href="about-parmer.html">About</a><a href="#communities">Communities</a><a href="#commercial">Commercial</a><a href="#investors">Investors</a><a href="#news">News</a><a href="#contact">Contact</a></div><div><h4>Communities</h4><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase 3</a></div><div><h4>Contact</h4><p>Auburn, Alabama</p><a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a><a href="tel:+13347502059">(334) 750-2059</a></div></div><div class="copyright">© 2026 Parmer Development. All Rights Reserved.</div></div></footer>
