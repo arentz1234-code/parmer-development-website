@@ -119,7 +119,8 @@
 .featureItem strong{display:block;font-size:13px;letter-spacing:.02em}
 .featureItem span{display:block;font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.5}
 @media(max-width:850px){.featureStripGrid{flex-direction:column;gap:20px}.heroScroll{display:none}}
-.floorPlansSection{background:#f7f5f1}.fpCarouselWrap{position:relative;overflow:hidden;padding:0 50px}.fpTrack{display:flex;gap:22px;transition:transform .4s cubic-bezier(.25,.8,.25,1)}.fpCard{flex:0 0 calc((100% - 44px)/3);background:#fff;box-shadow:0 4px 18px rgba(6,29,43,.09);overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:block}.fpCard:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(6,29,43,.16)}.fpImgBox{background:#f7f5f1;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}.fpImgBox img{width:100%;height:100%;object-fit:contain;padding:16px}.fpCardBody{padding:20px 22px}.fpBadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}.fpUnitName{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--navy);margin:6px 0 4px}.fpSqft{font-size:12px;color:var(--muted);margin:0}.fpArrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;border:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s}.fpArrow:hover{background:var(--orange)}.fpPrev{left:0}.fpNext{right:0}.fpDots{display:flex;justify-content:center;gap:8px;margin-top:24px}.fpDot{width:8px;height:8px;border-radius:50%;background:#ccc;border:none;cursor:pointer;padding:0;transition:.2s}.fpDot.active{background:var(--navy)}@media(max-width:900px){.fpCard{flex:0 0 calc((100% - 22px)/2)}}@media(max-width:580px){.fpCard{flex:0 0 100%}.fpCarouselWrap{padding:0 36px}}
+.floorPlansSection{background:#f7f5f1}.fpCarouselWrap{position:relative;overflow:hidden;padding:0 50px}.fpTrack{display:flex;gap:22px;transition:transform .4s cubic-bezier(.25,.8,.25,1)}.fpCard{flex:0 0 calc((100% - 44px)/3);background:#fff;box-shadow:0 4px 18px rgba(6,29,43,.09);overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:block}.fpCard:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(6,29,43,.16)}.fpImgBox{background:#f7f5f1;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}.fpImgBox img{width:100%;height:100%;object-fit:contain;padding:16px}.fpCardBody{padding:20px 22px}.fpBadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}.fpUnitName{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--navy);margin:6px 0 4px}.fpSqft{font-size:12px;color:var(--muted);margin:0}.fpArrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;border:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s}.fpArrow:hover{background:var(--orange)}.fpPrev{left:0}.fpNext{right:0}.fpDots{display:flex;justify-content:center;gap:8px;margin-top:24px}.fpDot{width:8px;height:8px;border-radius:50%;background:#ccc;border:none;cursor:pointer;padding:0;transition:.2s}.fpDot.active{background:var(--navy)}.fpImgBragg{padding:10px;gap:0}.braggFloors{display:flex;gap:6px;width:100%;height:100%;align-items:stretch}.braggFloor{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}.braggFloor img{flex:1;width:100%;object-fit:contain;min-height:0}.braggFloor span{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+@media(max-width:900px){.fpCard{flex:0 0 calc((100% - 22px)/2)}}@media(max-width:580px){.fpCard{flex:0 0 100%}.fpCarouselWrap{padding:0 36px}}
 </style>
 <style>.floatWidget{position:fixed;right:22px;bottom:22px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px}.fwToggle{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #ddd;box-shadow:0 2px 10px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s}.fwToggle:hover{background:#f5f2ee}.fwToggle svg{transition:transform .28s}.fwToggle.open svg{transform:rotate(180deg)}.floatWidgetPanel{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);width:236px;overflow:hidden;transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}.floatWidgetPanel.hidden{opacity:0;pointer-events:none;transform:scale(.93) translateY(10px)}.fwBtnGroup{display:flex;flex-direction:column}.fwBtn{display:flex;align-items:center;gap:12px;padding:13px 16px;background:#fff;border:none;border-top:1px solid #f0ece5;cursor:pointer;font-family:Inter,system-ui,sans-serif;text-align:left;width:100%;text-decoration:none;transition:background .15s;box-sizing:border-box}.fwBtn:first-child{border-top:none}.fwBtn:hover{background:#faf8f5}.fwBtn.chat{background:#d96f20;border-top:none}.fwBtn.chat:hover{background:#c46118}.fwIcon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.fwBtn.chat .fwIcon{background:rgba(255,255,255,.22);color:#fff}.fwBtn.tour .fwIcon{background:#f0ece5;color:#d96f20}.fwBtn.call .fwIcon{background:#f0ece5;color:#061d2b}.fwBtnText{flex:1;line-height:1.25}.fwBtnText strong{display:block;font-size:13.5px;font-weight:700;color:#061d2b}.fwBtn.chat .fwBtnText strong{color:#fff}.fwBtnText em{display:block;font-size:11.5px;font-style:normal;color:#888;margin-top:1px}.fwBtn.chat .fwBtnText em{color:rgba(255,255,255,.75)}.fwArrow{font-size:17px;color:#bbb;margin-left:4px;line-height:1}.fwBtn.chat .fwArrow{color:rgba(255,255,255,.7)}</style>
 </head>
@@ -185,37 +186,28 @@
           </div>
         </a>
 
-        <!-- Bragg Avenue Brownstones Floor Plans -->
-        <a class="fpCard" href="floorplan-pemberton.html">
-          <div class="fpImgBox">
-            <img src="assets/bragg-floorplan-ground.jpg" alt="The Pemberton floor plan"/>
+        <!-- Bragg Avenue Brownstones – single 3-story unit -->
+        <a class="fpCard fpCardBragg" href="bragg-brownstones.html#floorplans">
+          <div class="fpImgBox fpImgBragg">
+            <div class="braggFloors">
+              <div class="braggFloor">
+                <img src="assets/bragg-floorplan-ground.jpg" alt="Ground level floor plan"/>
+                <span>Ground</span>
+              </div>
+              <div class="braggFloor">
+                <img src="assets/bragg-floorplan-main.jpg" alt="Main level floor plan"/>
+                <span>Main</span>
+              </div>
+              <div class="braggFloor">
+                <img src="assets/bragg-floorplan-upper.jpg" alt="Upper level floor plan"/>
+                <span>Upper</span>
+              </div>
+            </div>
           </div>
           <div class="fpCardBody">
             <span class="fpBadge">Bragg Brownstones</span>
-            <h3 class="fpUnitName">The Pemberton</h3>
-            <p class="fpSqft">Ground Level &nbsp;·&nbsp; 2,772 sq ft</p>
-          </div>
-        </a>
-
-        <a class="fpCard" href="floorplan-ashford.html">
-          <div class="fpImgBox">
-            <img src="assets/bragg-floorplan-main.jpg" alt="The Ashford floor plan"/>
-          </div>
-          <div class="fpCardBody">
-            <span class="fpBadge">Bragg Brownstones</span>
-            <h3 class="fpUnitName">The Ashford</h3>
-            <p class="fpSqft">Main Level &nbsp;·&nbsp; 2,772 sq ft</p>
-          </div>
-        </a>
-
-        <a class="fpCard" href="floorplan-balmoral.html">
-          <div class="fpImgBox">
-            <img src="assets/bragg-floorplan-upper.jpg" alt="The Balmoral floor plan"/>
-          </div>
-          <div class="fpCardBody">
-            <span class="fpBadge">Bragg Brownstones</span>
-            <h3 class="fpUnitName">The Balmoral</h3>
-            <p class="fpSqft">Upper Level &nbsp;·&nbsp; 2,772 sq ft</p>
+            <h3 class="fpUnitName">Bragg Brownstone</h3>
+            <p class="fpSqft">3-Story Townhome &nbsp;·&nbsp; 2,772 sq ft</p>
           </div>
         </a>
 
@@ -234,8 +226,6 @@
       <button class="fpDot" data-index="1"></button>
       <button class="fpDot" data-index="2"></button>
       <button class="fpDot" data-index="3"></button>
-      <button class="fpDot" data-index="4"></button>
-      <button class="fpDot" data-index="5"></button>
     </div>
 
   </div>
