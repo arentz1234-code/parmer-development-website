@@ -35,7 +35,7 @@
     /* ─── Fixed nav ─── */
     .siteHeader {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 34px; left: 0; right: 0;
       z-index: 100;
       height: 82px;
       display: flex;
@@ -740,7 +740,7 @@
 @media(max-width:800px){
   .menuBtn{display:block}
   .nav{white-space:normal}
-  .nav.open{display:flex!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:#061d2b;flex-direction:column;align-items:flex-start;gap:0;padding:24px 28px 40px;z-index:200;overflow-y:auto}
+  H6px;left:0;right:0;bottom:0;background:#061d2b;flex-direction:column;align-items:flex-start;gap:0;padding:24px 28px 40px;z-index:200;overflow-y:auto}
   .nav.open>a{font-size:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);width:100%;display:block}
   .nav.open .navDrop{width:100%;border-bottom:1px solid rgba(255,255,255,.12)}
   .nav.open .navDrop>a{font-size:16px;padding:16px 0;width:100%;display:block}
@@ -750,10 +750,12 @@
   .nav.open .navSocial{margin-top:24px}
 }
 </style>
+<style>.announceBanner{position:fixed;top:0;left:0;right:0;z-index:55;background:#d96f20;color:#fff;text-align:center;height:34px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}@media(max-width:900px){.announceBanner{font-size:11px}}</style>
 </head>
 <body>
 
   <!-- ─── Fixed nav header ─── -->
+<div class="announceBanner">Now Leasing &nbsp;·&nbsp; Fall 2027</div>
   <header class="siteHeader">
     <a class="brand" href="index.html">
       <img src="assets/parmer-logo-white-master.png" alt="Parmer Development">
