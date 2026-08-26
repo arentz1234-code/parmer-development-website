@@ -119,6 +119,7 @@
 .featureItem strong{display:block;font-size:13px;letter-spacing:.02em}
 .featureItem span{display:block;font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.5}
 @media(max-width:850px){.featureStripGrid{flex-direction:column;gap:20px}.heroScroll{display:none}}
+.floorPlansSection{background:#f7f5f1}.fpCarouselWrap{position:relative;overflow:hidden;padding:0 50px}.fpTrack{display:flex;gap:22px;transition:transform .4s cubic-bezier(.25,.8,.25,1)}.fpCard{flex:0 0 calc((100% - 44px)/3);background:#fff;box-shadow:0 4px 18px rgba(6,29,43,.09);overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:block}.fpCard:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(6,29,43,.16)}.fpImgBox{background:#f7f5f1;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}.fpImgBox img{width:100%;height:100%;object-fit:contain;padding:16px}.fpCardBody{padding:20px 22px}.fpBadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}.fpUnitName{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--navy);margin:6px 0 4px}.fpSqft{font-size:12px;color:var(--muted);margin:0}.fpArrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;border:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s}.fpArrow:hover{background:var(--orange)}.fpPrev{left:0}.fpNext{right:0}.fpDots{display:flex;justify-content:center;gap:8px;margin-top:24px}.fpDot{width:8px;height:8px;border-radius:50%;background:#ccc;border:none;cursor:pointer;padding:0;transition:.2s}.fpDot.active{background:var(--navy)}@media(max-width:900px){.fpCard{flex:0 0 calc((100% - 22px)/2)}}@media(max-width:580px){.fpCard{flex:0 0 100%}.fpCarouselWrap{padding:0 36px}}
 </style><link rel="stylesheet" href="assets/leaflet.min.css"/>
 <style>.leaflet-container img{max-width:none!important;max-height:none!important;display:inline!important;width:auto!important;height:auto!important;object-fit:unset!important;transform:none!important;transition:none!important;position:static!important}.leaflet-tile-container img,.leaflet-tile{width:256px!important;height:256px!important;max-width:none!important;max-height:none!important;display:block!important}</style>
 </head>
@@ -155,81 +156,79 @@
 
 <section class="floorPlansSection" id="floor-plans">
   <div class="container">
-    <div class="eyebrow">Residential Options</div>
-    <h2 class="sectionTitle">Floor Plans</h2>
-    <p class="lead">Thoughtfully designed layouts across our Auburn communities   from cozy cottages to spacious townhomes. Contact our team for current availability and detailed floor plan documents.</p>
+    <div class="eyebrow">Spacious Floor Plans</div>
+    <h2 class="sectionTitle">Find Your Perfect Home</h2>
+    <p class="lead">From intimate two-bedroom townhomes to five-bedroom brownstones — explore our named floor plans across Richland Village and Bragg Avenue Brownstones. Click any plan to explore the full layout.</p>
     <div class="fpCarouselWrap" id="fpCarousel">
       <div class="fpTrack" id="fpTrack">
 
-        <!-- Card 1 -->
-        <div class="fpCard">
+        <!-- Richland Village Floor Plans -->
+        <a class="fpCard" href="floorplan-cotswold.html">
           <div class="fpImgBox">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="40" rx="2" stroke="#8a8680" stroke-width="2"/><rect x="8" y="8" width="22" height="40" stroke="#8a8680" stroke-width="2"/><rect x="8" y="22" width="22" height="0" stroke="#8a8680" stroke-width="2"/><line x1="8" y1="28" x2="30" y2="28" stroke="#8a8680" stroke-width="1.5"/><line x1="30" y1="8" x2="30" y2="48" stroke="#8a8680" stroke-width="1.5"/></svg>
-            <span class="fpImgLabel">Floor Plan Coming Soon</span>
-          </div>
-          <div class="fpCardBody">
-            <span class="fpBadge">Judd Ave Cottages</span>
-            <h3 class="fpUnitName">1 Bedroom / 1 Bath</h3>
-            <p class="fpSqft">~1,250 sq ft &nbsp;·&nbsp; Single Family</p>
-            <button class="fpReqBtn" data-open-modal="">Request Info</button>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="fpCard">
-          <div class="fpImgBox">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="40" rx="2" stroke="#8a8680" stroke-width="2"/><line x1="8" y1="28" x2="48" y2="28" stroke="#8a8680" stroke-width="1.5"/><line x1="28" y1="8" x2="28" y2="28" stroke="#8a8680" stroke-width="1.5"/><rect x="8" y="28" width="20" height="20" stroke="#8a8680" stroke-width="1.5"/></svg>
-            <span class="fpImgLabel">Floor Plan Coming Soon</span>
-          </div>
-          <div class="fpCardBody">
-            <span class="fpBadge">Judd Ave Cottages</span>
-            <h3 class="fpUnitName">3 Bedroom / 2 Bath</h3>
-            <p class="fpSqft">~2,055 sq ft &nbsp;·&nbsp; Single Family</p>
-            <button class="fpReqBtn" data-open-modal="">Request Info</button>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="fpCard">
-          <div class="fpImgBox">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="8" y="14" width="40" height="34" rx="2" stroke="#8a8680" stroke-width="2"/><line x1="8" y1="30" x2="48" y2="30" stroke="#8a8680" stroke-width="1.5"/><line x1="24" y1="14" x2="24" y2="48" stroke="#8a8680" stroke-width="1.5"/><rect x="8" y="8" width="40" height="6" rx="1" stroke="#8a8680" stroke-width="1.5"/></svg>
-            <span class="fpImgLabel">Floor Plan Coming Soon</span>
+            <img src="assets/phase3-floorplan-2br.png" alt="The Cotswold floor plan"/>
           </div>
           <div class="fpCardBody">
             <span class="fpBadge">Richland Village</span>
-            <h3 class="fpUnitName">2 Bedroom / 2.5 Bath</h3>
-            <p class="fpSqft">~1,400 sq ft &nbsp;·&nbsp; Townhome</p>
-            <button class="fpReqBtn" data-open-modal="">Request Info</button>
+            <h3 class="fpUnitName">The Cotswold</h3>
+            <p class="fpSqft">2 Bedroom &nbsp;·&nbsp; ~1,400 sq ft</p>
           </div>
-        </div>
+        </a>
 
-        <!-- Card 4 -->
-        <div class="fpCard">
+        <a class="fpCard" href="floorplan-windsor.html">
           <div class="fpImgBox">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="8" y="14" width="40" height="34" rx="2" stroke="#8a8680" stroke-width="2"/><line x1="8" y1="32" x2="48" y2="32" stroke="#8a8680" stroke-width="1.5"/><line x1="30" y1="14" x2="30" y2="32" stroke="#8a8680" stroke-width="1.5"/><line x1="8" y1="24" x2="30" y2="24" stroke="#8a8680" stroke-width="1.5"/></svg>
-            <span class="fpImgLabel">Floor Plan Coming Soon</span>
+            <img src="assets/phase3-floorplan-3br.png" alt="The Windsor floor plan"/>
+          </div>
+          <div class="fpCardBody">
+            <span class="fpBadge">Richland Village</span>
+            <h3 class="fpUnitName">The Windsor</h3>
+            <p class="fpSqft">3 Bedroom &nbsp;·&nbsp; ~1,600 sq ft</p>
+          </div>
+        </a>
+
+        <a class="fpCard" href="floorplan-kensington.html">
+          <div class="fpImgBox">
+            <img src="assets/phase3-floorplan-4br.png" alt="The Kensington floor plan"/>
+          </div>
+          <div class="fpCardBody">
+            <span class="fpBadge">Richland Village</span>
+            <h3 class="fpUnitName">The Kensington</h3>
+            <p class="fpSqft">4 Bedroom &nbsp;·&nbsp; ~1,700 sq ft</p>
+          </div>
+        </a>
+
+        <!-- Bragg Avenue Brownstones Floor Plans -->
+        <a class="fpCard" href="floorplan-pemberton.html">
+          <div class="fpImgBox">
+            <img src="assets/bragg-floorplan-ground.jpg" alt="The Pemberton floor plan"/>
           </div>
           <div class="fpCardBody">
             <span class="fpBadge">Bragg Brownstones</span>
-            <h3 class="fpUnitName">3 Bedroom / 3 Bath</h3>
-            <p class="fpSqft">~2,772 sq ft &nbsp;·&nbsp; Brownstone</p>
-            <button class="fpReqBtn" data-open-modal="">Request Info</button>
+            <h3 class="fpUnitName">The Pemberton</h3>
+            <p class="fpSqft">Ground Level &nbsp;·&nbsp; 2,772 sq ft</p>
           </div>
-        </div>
+        </a>
 
-        <!-- Card 5 -->
-        <div class="fpCard">
+        <a class="fpCard" href="floorplan-ashford.html">
           <div class="fpImgBox">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="8" y="10" width="40" height="36" rx="2" stroke="#8a8680" stroke-width="2"/><line x1="8" y1="28" x2="48" y2="28" stroke="#8a8680" stroke-width="1.5"/><line x1="26" y1="10" x2="26" y2="46" stroke="#8a8680" stroke-width="1.5"/><line x1="26" y1="19" x2="48" y2="19" stroke="#8a8680" stroke-width="1.5"/></svg>
-            <span class="fpImgLabel">Floor Plan Coming Soon</span>
+            <img src="assets/bragg-floorplan-main.jpg" alt="The Ashford floor plan"/>
           </div>
           <div class="fpCardBody">
-            <span class="fpBadge">Richland Village Phase III</span>
-            <h3 class="fpUnitName">2 Bedroom / 2 Bath</h3>
-            <p class="fpSqft">~1,194 sq ft &nbsp;·&nbsp; Townhome</p>
-            <button class="fpReqBtn" data-open-modal="">Request Info</button>
+            <span class="fpBadge">Bragg Brownstones</span>
+            <h3 class="fpUnitName">The Ashford</h3>
+            <p class="fpSqft">Main Level &nbsp;·&nbsp; 2,772 sq ft</p>
           </div>
-        </div>
+        </a>
+
+        <a class="fpCard" href="floorplan-balmoral.html">
+          <div class="fpImgBox">
+            <img src="assets/bragg-floorplan-upper.jpg" alt="The Balmoral floor plan"/>
+          </div>
+          <div class="fpCardBody">
+            <span class="fpBadge">Bragg Brownstones</span>
+            <h3 class="fpUnitName">The Balmoral</h3>
+            <p class="fpSqft">Upper Level &nbsp;·&nbsp; 2,772 sq ft</p>
+          </div>
+        </a>
 
       </div><!-- end fpTrack -->
 
@@ -247,6 +246,7 @@
       <button class="fpDot" data-index="2"></button>
       <button class="fpDot" data-index="3"></button>
       <button class="fpDot" data-index="4"></button>
+      <button class="fpDot" data-index="5"></button>
     </div>
 
   </div>

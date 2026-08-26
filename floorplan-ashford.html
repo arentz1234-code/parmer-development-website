@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Ashford Floor Plan | Parmer Development</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"/>
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#061d2b;--orange:#d96f20;--cream:#f7f5f1;--ink:#15212a;--muted:#64707a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+    .siteHeader{height:72px;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 5.5%}
+    .brand img{width:180px;height:auto;display:block}
+    .headerNav{display:flex;gap:24px;align-items:center}
+    .headerNav a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#fff;opacity:.8;transition:.18s}
+    .headerNav a:hover{opacity:1}
+    .headerNav a.active{opacity:1;color:var(--orange)}
+    .heroBand{background:var(--navy);padding:48px 5.5% 52px;color:#fff}
+    .heroBand .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+    .heroBand h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:500;margin:0 0 6px;line-height:1.05}
+    .heroBand .subtitle{font-size:15px;opacity:.7;margin:0}
+    .crumbs{padding:14px 5.5%;font-size:12px;color:var(--muted);border-bottom:1px solid #e8e3da}
+    .crumbs a{color:var(--navy);font-weight:500}
+    .crumbs a:hover{color:var(--orange)}
+    .crumbs span{margin:0 6px}
+    .main{max-width:980px;margin:0 auto;padding:44px 5.5% 64px}
+    .fpImageWrap{background:var(--cream);border-radius:2px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:560px}
+    .fpImageWrap img{max-width:100%;max-height:600px;object-fit:contain;display:block;margin:0 auto}
+    .detailsBlock{margin-top:36px;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    .detailsLeft h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;color:var(--navy);margin:0 0 6px}
+    .detailsLeft .community{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+    .specs{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px}
+    .spec{border-left:2px solid var(--orange);padding-left:12px}
+    .spec strong{display:block;font-size:15px;color:var(--navy);font-weight:600}
+    .spec span{font-size:12px;color:var(--muted)}
+    .detailsRight{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .btn{display:inline-flex;align-items:center;padding:13px 26px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--orange);transition:.2s}
+    .btn.orange{background:var(--orange);color:#fff}
+    .btn.orange:hover{background:#c26318;border-color:#c26318}
+    .btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .otherPlans{margin-top:56px;border-top:1px solid #e8e3da;padding-top:36px}
+    .otherPlans h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--navy);margin:0 0 20px}
+    .planGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .planThumb{border:1px solid #e8e3da;background:var(--cream);overflow:hidden;display:block;transition:.2s}
+    .planThumb:hover{box-shadow:0 8px 24px rgba(6,29,43,.12);transform:translateY(-3px)}
+    .planThumb img{width:100%;aspect-ratio:4/3;object-fit:contain;padding:12px;background:var(--cream)}
+    .planThumb .planLabel{padding:10px 14px;font-size:13px;font-weight:600;color:var(--navy)}
+    .planThumb .planLabel small{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+    footer{background:var(--navy);color:#fff;padding:32px 5.5% 22px;margin-top:0}
+    .footerInner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer img{width:160px}
+    .copyright{font-size:11px;opacity:.5;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+    @media(max-width:700px){.planGrid{grid-template-columns:1fr 1fr}.detailsBlock{flex-direction:column}.fpImageWrap{padding:16px;min-height:340px}}
+    @media(max-width:480px){.planGrid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="siteHeader">
+    <a class="brand" href="index.html"><img src="assets/parmer-logo-white-master.png" alt="Parmer Development"/></a>
+    <nav class="headerNav">
+      <a href="index.html">Home</a>
+      <a href="bragg-brownstones.html">Bragg Brownstones</a>
+      <a href="index.html#floor-plans" class="active">Floor Plans</a>
+    </nav>
+  </header>
+
+  <div class="heroBand">
+    <div class="eyebrow">Bragg Avenue Brownstones</div>
+    <h1>The Ashford</h1>
+    <p class="subtitle">Main Level &nbsp;·&nbsp; 2,772 sq ft</p>
+  </div>
+
+  <div class="crumbs">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><span>›</span>
+    <a href="bragg-brownstones.html#floorplans">Floor Plans</a><span>›</span>
+    The Ashford
+  </div>
+
+  <main class="main">
+    <div class="fpImageWrap">
+      <img src="assets/bragg-floorplan-main.jpg" alt="The Ashford floor plan"/>
+    </div>
+
+    <div class="detailsBlock">
+      <div class="detailsLeft">
+        <div class="community">Bragg Avenue Brownstones</div>
+        <h2>The Ashford</h2>
+        <div class="specs">
+          <div class="spec"><strong>Main Level</strong><span>Floor</span></div><div class="spec"><strong>2,772 sq ft</strong><span>Total Home</span></div><div class="spec"><strong>Brownstone</strong><span>Home Type</span></div>
+        </div>
+      </div>
+      <div class="detailsRight">
+        <a class="btn orange" href="bragg-brownstones.html">View Bragg Brownstones Community</a>
+        <a class="btn ghost" href="index.html#floor-plans">All Floor Plans</a>
+      </div>
+    </div>
+
+    <div class="otherPlans">
+      <h3>More Floor Plans</h3>
+      <div class="planGrid">
+        <a class="planThumb" href="floorplan-cotswold.html">
+          <img src="assets/phase3-floorplan-2br.png" alt="The Cotswold floor plan"/>
+          <div class="planLabel">The Cotswold<small>Richland Village</small></div>
+        </a>
+        <a class="planThumb" href="floorplan-windsor.html">
+          <img src="assets/phase3-floorplan-3br.png" alt="The Windsor floor plan"/>
+          <div class="planLabel">The Windsor<small>Richland Village</small></div>
+        </a>
+        <a class="planThumb" href="floorplan-kensington.html">
+          <img src="assets/phase3-floorplan-4br.png" alt="The Kensington floor plan"/>
+          <div class="planLabel">The Kensington<small>Richland Village</small></div>
+        </a>
+        <a class="planThumb" href="floorplan-pemberton.html">
+          <img src="assets/bragg-floorplan-ground.jpg" alt="The Pemberton floor plan"/>
+          <div class="planLabel">The Pemberton<small>Bragg Brownstones</small></div>
+        </a>
+        <a class="planThumb" href="floorplan-balmoral.html">
+          <img src="assets/bragg-floorplan-upper.jpg" alt="The Balmoral floor plan"/>
+          <div class="planLabel">The Balmoral<small>Bragg Brownstones</small></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footerInner">
+      <img src="assets/parmer-logo-white-master.png" alt="Parmer Development"/>
+      <div style="font-size:13px;opacity:.7">Auburn, Alabama &nbsp;·&nbsp; <a href="mailto:leasing@parmerdevelopment.com" style="color:#fff">leasing@parmerdevelopment.com</a></div>
+    </div>
+    <div class="copyright">© 2026 Parmer Development. All Rights Reserved.</div>
+  </footer>
+</body>
+</html>
