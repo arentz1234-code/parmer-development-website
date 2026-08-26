@@ -82,9 +82,30 @@
     The Cotswold
   </div>
 
+  <style>
+    .fpTabWrap{background:var(--cream);border-radius:2px;overflow:hidden;min-height:560px;display:flex;flex-direction:column}
+    .fpLevelTabs{display:flex;border-bottom:1px solid #e8e3da;background:#fff;flex-shrink:0}
+    .fpLevelTab{flex:1;padding:11px 4px;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:.15s;font-family:inherit}
+    .fpLevelTab.active{color:var(--orange);border-bottom-color:var(--orange)}
+    .fpLevelPanels{flex:1;position:relative}
+    .fpLevelPanel{display:none;padding:32px;align-items:center;justify-content:center;min-height:500px}
+    .fpLevelPanel.active{display:flex}
+    .fpLevelPanel img{max-width:100%;max-height:580px;object-fit:contain;display:block;margin:0 auto}
+  </style>
   <main class="main">
-    <div class="fpImageWrap">
-      <img src="assets/phase3-floorplan-2br.png" alt="The Cotswold floor plan"/>
+    <div class="fpTabWrap">
+      <div class="fpLevelTabs">
+        <button class="fpLevelTab active" data-panel="ground">Ground Level</button>
+        <button class="fpLevelTab" data-panel="second">Second Level</button>
+      </div>
+      <div class="fpLevelPanels">
+        <div class="fpLevelPanel active" id="panel-ground">
+          <img src="assets/cotswold-ground.png" alt="The Cotswold ground level floor plan"/>
+        </div>
+        <div class="fpLevelPanel" id="panel-second">
+          <img src="assets/cotswold-second.png" alt="The Cotswold second level floor plan"/>
+        </div>
+      </div>
     </div>
 
     <div class="detailsBlock">
@@ -112,22 +133,23 @@
           <img src="assets/phase3-floorplan-4br.png" alt="The Kensington floor plan"/>
           <div class="planLabel">The Kensington<small>Richland Village</small></div>
         </a>
-        <a class="planThumb" href="floorplan-pemberton.html">
-          <img src="assets/bragg-floorplan-ground.jpg" alt="The Pemberton floor plan"/>
-          <div class="planLabel">The Pemberton<small>Bragg Brownstones</small></div>
-        </a>
-        <a class="planThumb" href="floorplan-ashford.html">
-          <img src="assets/bragg-floorplan-main.jpg" alt="The Ashford floor plan"/>
-          <div class="planLabel">The Ashford<small>Bragg Brownstones</small></div>
-        </a>
-        <a class="planThumb" href="floorplan-balmoral.html">
-          <img src="assets/bragg-floorplan-upper.jpg" alt="The Balmoral floor plan"/>
-          <div class="planLabel">The Balmoral<small>Bragg Brownstones</small></div>
+        <a class="planThumb" href="bragg-brownstones.html#floorplans">
+          <img src="assets/bragg-floorplan-ground.jpg" alt="Bragg Brownstone floor plans"/>
+          <div class="planLabel">Bragg Brownstone<small>Bragg Brownstones &mdash; All Levels</small></div>
         </a>
       </div>
     </div>
   </main>
-
+<script>
+document.querySelectorAll('.fpLevelTab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.fpLevelTab').forEach(function(t){t.classList.remove('active');});
+    document.querySelectorAll('.fpLevelPanel').forEach(function(p){p.classList.remove('active');});
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
+  });
+});
+</script>
   <footer>
     <div class="footerInner">
       <img src="assets/parmer-logo-white-master.png" alt="Parmer Development"/>
