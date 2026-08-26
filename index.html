@@ -47,7 +47,7 @@
 .socialText{display:flex;flex-direction:column;text-align:left}
 .socialText strong{font-size:14px;color:var(--navy);letter-spacing:.01em;font-weight:700}
 .socialText span{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#8a8f94;margin-top:3px}
-    .askParmer{position:fixed;right:22px;bottom:22px;z-index:100;width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid rgba(255,255,255,.9);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 35px rgba(0,0,0,.28);transition:transform .2s ease,box-shadow .2s ease}.askParmer:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 14px 40px rgba(0,0,0,.32)}.askParmer svg{width:31px;height:31px;display:block}.askParmer .aiSpark{fill:var(--orange);stroke:none}
+    .askParmer{position:fixed;right:22px;bottom:22px;z-index:100;display:none!important;width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid rgba(255,255,255,.9);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 35px rgba(0,0,0,.28);transition:transform .2s ease,box-shadow .2s ease}.askParmer:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 14px 40px rgba(0,0,0,.32)}.askParmer svg{width:31px;height:31px;display:block}.askParmer .aiSpark{fill:var(--orange);stroke:none}
     .chatBox{display:none;position:fixed;right:22px;bottom:78px;width:min(360px,calc(100% - 30px));z-index:100;background:#fff;box-shadow:0 18px 60px rgba(0,0,0,.28);border:1px solid #ddd}.chatBox.open{display:block}.chatTitle{background:var(--navy);color:#fff;padding:17px;font-weight:800}.chatContent{padding:16px;font-size:13px;line-height:1.55}.chatContent button{margin:4px;padding:8px;background:#fff;border:1px solid #bbb;cursor:pointer}.chatReply{background:#f3f0ea;padding:11px;margin-top:10px}
     @media(max-width:850px){.collection4,.commercialSplit,.mapWrap{grid-template-columns:1fr}.brandLogo{width:205px}.matterportFrame{height:500px}}
 .navSocial{display:flex;gap:10px;align-items:center;margin-left:6px}.navSocial a{color:#fff;opacity:.75;display:flex;align-items:center;line-height:1;transition:opacity .2s}.navSocial a:hover{opacity:1}.footerSocial{display:flex;gap:14px;margin-top:14px}.footerSocial a{color:#fff;opacity:.65;display:flex;align-items:center;line-height:1;transition:opacity .2s}.footerSocial a:hover{opacity:1}</style>
@@ -121,7 +121,7 @@
 @media(max-width:850px){.featureStripGrid{flex-direction:column;gap:20px}.heroScroll{display:none}}
 .floorPlansSection{background:#f7f5f1}.fpCarouselWrap{position:relative;overflow:hidden;padding:0 50px}.fpTrack{display:flex;gap:22px;transition:transform .4s cubic-bezier(.25,.8,.25,1)}.fpCard{flex:0 0 calc((100% - 44px)/3);background:#fff;box-shadow:0 4px 18px rgba(6,29,43,.09);overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:block}.fpCard:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(6,29,43,.16)}.fpImgBox{background:#f7f5f1;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}.fpImgBox img{width:100%;height:100%;object-fit:contain;padding:16px}.fpCardBody{padding:20px 22px}.fpBadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}.fpUnitName{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--navy);margin:6px 0 4px}.fpSqft{font-size:12px;color:var(--muted);margin:0}.fpArrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;border:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s}.fpArrow:hover{background:var(--orange)}.fpPrev{left:0}.fpNext{right:0}.fpDots{display:flex;justify-content:center;gap:8px;margin-top:24px}.fpDot{width:8px;height:8px;border-radius:50%;background:#ccc;border:none;cursor:pointer;padding:0;transition:.2s}.fpDot.active{background:var(--navy)}@media(max-width:900px){.fpCard{flex:0 0 calc((100% - 22px)/2)}}@media(max-width:580px){.fpCard{flex:0 0 100%}.fpCarouselWrap{padding:0 36px}}
 </style><link rel="stylesheet" href="assets/leaflet.min.css"/>
-<style>.leaflet-container img{max-width:none!important;max-height:none!important;display:inline!important;width:auto!important;height:auto!important;object-fit:unset!important;transform:none!important;transition:none!important;position:static!important}.leaflet-tile-container img,.leaflet-tile{width:256px!important;height:256px!important;max-width:none!important;max-height:none!important;display:block!important}</style>
+<style>.leaflet-container img{max-width:none!important;max-height:none!important;display:inline!important;width:auto!important;height:auto!important;object-fit:unset!important;transform:none!important;transition:none!important;position:static!important}.leaflet-tile-container img,.leaflet-tile{width:256px!important;height:256px!important;max-width:none!important;max-height:none!important;display:block!important}.floatWidget{position:fixed;right:22px;bottom:22px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px}.fwToggle{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #ddd;box-shadow:0 2px 10px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s}.fwToggle:hover{background:#f5f2ee}.fwToggle svg{transition:transform .28s}.fwToggle.open svg{transform:rotate(180deg)}.floatWidgetPanel{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);width:236px;overflow:hidden;transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}.floatWidgetPanel.hidden{opacity:0;pointer-events:none;transform:scale(.93) translateY(10px)}.fwBtnGroup{display:flex;flex-direction:column}.fwBtn{display:flex;align-items:center;gap:12px;padding:13px 16px;background:#fff;border:none;border-top:1px solid #f0ece5;cursor:pointer;font-family:Inter,system-ui,sans-serif;text-align:left;width:100%;text-decoration:none;transition:background .15s;box-sizing:border-box}.fwBtn:first-child{border-top:none}.fwBtn:hover{background:#faf8f5}.fwBtn.chat{background:#d96f20;border-top:none}.fwBtn.chat:hover{background:#c46118}.fwIcon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.fwBtn.chat .fwIcon{background:rgba(255,255,255,.22);color:#fff}.fwBtn.tour .fwIcon{background:#f0ece5;color:#d96f20}.fwBtn.call .fwIcon{background:#f0ece5;color:#061d2b}.fwBtnText{flex:1;line-height:1.25}.fwBtnText strong{display:block;font-size:13.5px;font-weight:700;color:#061d2b}.fwBtn.chat .fwBtnText strong{color:#fff}.fwBtnText em{display:block;font-size:11.5px;font-style:normal;color:#888;margin-top:1px}.fwBtn.chat .fwBtnText em{color:rgba(255,255,255,.75)}.fwArrow{font-size:17px;color:#bbb;margin-left:4px;line-height:1}.fwBtn.chat .fwArrow{color:rgba(255,255,255,.7)}</style>
 </head>
 <body>
 <header id="header"><div class="container nav"><a href="#top"><img alt="Parmer Development" class="brandLogo" src="assets/parmer-logo-white-master.png"/></a><nav class="links" id="navLinks"><a href="about-parmer.html">Our Story</a><span class="communityNav"><a href="#portfolio">Communities ▾</a><span class="communityMenu"><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase III</a></span></span><a href="#commercial">Commercial</a><span class="communityNav"><a href="richland-village.html#tour">Virtual Tours ▾</a><span class="communityMenu"><a href="richland-village.html#tour">Richland Village</a><a href="judd-cottages.html#tour">Judd Avenue Cottages</a></span></span><a href="#contact">Contact</a><button class="btn ghost" data-open-modal="">Apply</button><span class="navSocial"><a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></span></nav><button aria-label="Open menu" class="menuBtn" id="menuBtn">☰</button></div></header>
@@ -359,27 +359,43 @@ const urlParams=new URLSearchParams(location.search);const wantedInterest=urlPar
 </script>
 <button aria-label="Open Ask Parmer AI chat" class="askParmer" id="askParmer" title="Ask Parmer"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M6 6.5h20a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H15l-6.5 4v-4H6a3 3 0 0 1-3-3v-11a3 3 0 0 1 3-3Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path><circle cx="11" cy="15" fill="currentColor" r="1.5"></circle><circle cx="16" cy="15" fill="currentColor" r="1.5"></circle><circle cx="21" cy="15" fill="currentColor" r="1.5"></circle><path class="aiSpark" d="M24.8 2.3c.5 2.2 1.6 3.3 3.8 3.8-2.2.5-3.3 1.6-3.8 3.8-.5-2.2-1.6-3.3-3.8-3.8 2.2-.5 3.3-1.6 3.8-3.8Z"></path></svg></button><div class="chatBox" id="chatBox"><div class="chatTitle">Ask Parmer</div><div class="chatContent"><div>Ask a question about our communities, locations, tours, or leasing.</div><div><button data-q="bragg">Bragg</button><button data-q="richland">Richland</button><button data-q="judd">Judd</button><button data-q="tours">Virtual tours</button></div><div class="chatReply" id="chatReply">How can I help?</div><div class="chatInputRow"><input id="parmerQuestion" placeholder="Type your question…"/><button id="sendParmerQuestion">Ask</button></div><div class="chatNote">For pricing, availability, lease terms, pet policies, or anything not listed on the site, contact leasing@parmerdevelopment.com or (334) 750-2059.</div></div></div>
 
-<!-- ── Floating Right-Side Chat Widget ── -->
+<!-- ── Floating Contact Widget ── -->
 <div class="floatWidget" id="floatWidget">
+  <button class="fwToggle open" id="fwToggle" aria-label="Toggle contact panel">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+      <path d="M2 4.5l4.5 4.5 4.5-4.5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <div class="floatWidgetPanel" id="floatWidgetPanel">
-    <div class="fwBtnGroup" id="fwBtnGroup">
-      <button class="fwBtn chat" id="askParmerWidget" title="Chat with us">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Chat with us
+    <div class="fwBtnGroup">
+
+      <button class="fwBtn chat" id="askParmerWidget" type="button">
+        <span class="fwIcon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <span class="fwBtnText"><strong>Chat</strong><em>with us</em></span>
+        <span class="fwArrow">›</span>
       </button>
-      <button class="fwBtn tour" data-open-modal="" title="Book a tour">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Book a tour
+
+      <button class="fwBtn tour" type="button" data-open-modal="">
+        <span class="fwIcon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/></svg>
+        </span>
+        <span class="fwBtnText"><strong>Book</strong><em>a tour</em></span>
+        <span class="fwArrow">›</span>
       </button>
-      <a class="fwBtn call" href="tel:+13347502059" title="Call or text us">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.14 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-        Call or text us
+
+      <a class="fwBtn call" href="tel:+13347502059">
+        <span class="fwIcon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </span>
+        <span class="fwBtnText"><strong>Call</strong><em>or text us</em></span>
+        <span class="fwArrow">›</span>
       </a>
-    </div><!-- end fwBtnGroup -->
-    <button class="fwToggle" id="fwToggle" aria-label="Toggle contact panel" title="Toggle">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
+
+    </div>
   </div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -441,7 +457,8 @@ document.getElementById('sendParmerQuestion').onclick=answerParmer;document.getE
   var chatTrigger = document.getElementById('askParmerWidget');
   if(!toggle || !panel) return;
   toggle.addEventListener('click', function(){
-    panel.classList.toggle('collapsed');
+    panel.classList.toggle('hidden');
+    toggle.classList.toggle('open');
   });
   if(chatTrigger){
     chatTrigger.addEventListener('click', function(){
