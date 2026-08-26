@@ -665,6 +665,10 @@
     .propTab{padding:16px 28px;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-1px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64707a;cursor:pointer;transition:.15s;font-family:inherit}
     .propTab.active{color:#d96f20;border-bottom-color:#d96f20}
     .propTab:hover{color:#d96f20}
+    .commPhotoStrip{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;max-width:1100px;margin:0 auto;padding:0 5.5% 0}
+    .commPhotoStrip img{width:100%;height:280px;object-fit:cover;display:block}
+    @media(max-width:860px){.commPhotoStrip{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.commPhotoStrip{grid-template-columns:1fr}.commPhotoStrip img{height:220px}}
 
     @media (max-width: 800px) {
       .siteHeader { height: 68px; padding: 0 20px; }
@@ -865,6 +869,13 @@
     </div>
   </section>
 
+  <!-- Bragg photos -->
+  <div class="commPhotoStrip" style="padding-top:6px">
+    <img src="assets/bragg-main-new.jpeg" alt="Bragg Avenue Brownstones exterior"/>
+    <img src="assets/bragg-hero.jpg" alt="Bragg Avenue streetscape"/>
+    <img src="assets/bragg-gallery-2.jpg" alt="Bragg Avenue building detail"/>
+  </div>
+
   <!-- ─── Why Bragg Avenue ─── -->
   <section class="whySection">
     <div class="whyInner">
@@ -982,6 +993,13 @@
         </div>
       </div>
     </section>
+
+  <!-- Richland photos -->
+  <div class="commPhotoStrip" style="padding-top:6px">
+    <img src="assets/richland-hero.jpg" alt="Richland Village exterior"/>
+    <img src="assets/richland-1.jpeg" alt="Richland Village community"/>
+    <img src="assets/richland-2.jpeg" alt="Richland Village detail"/>
+  </div>
 
     <section class="whySection">
       <div class="whyInner">
