@@ -134,6 +134,53 @@
 @media(max-width:900px){.fpCard{flex:0 0 calc((100% - 22px)/2)}}@media(max-width:580px){.fpCard{flex:0 0 100%}.fpCarouselWrap{padding:0 36px}}
 </style>
 <style>.floatWidget{position:fixed;right:22px;bottom:22px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px}.fwToggle{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #ddd;box-shadow:0 2px 10px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s}.fwToggle:hover{background:#f5f2ee}.fwToggle svg{transition:transform .28s}.fwToggle.open svg{transform:rotate(180deg)}.floatWidgetPanel{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);width:236px;overflow:hidden;transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}.floatWidgetPanel.hidden{opacity:0;pointer-events:none;transform:scale(.93) translateY(10px)}.fwBtnGroup{display:flex;flex-direction:column}.fwBtn{display:flex;align-items:center;gap:12px;padding:13px 16px;background:#fff;border:none;border-top:1px solid #f0ece5;cursor:pointer;font-family:Inter,system-ui,sans-serif;text-align:left;width:100%;text-decoration:none;transition:background .15s;box-sizing:border-box}.fwBtn:first-child{border-top:none}.fwBtn:hover{background:#faf8f5}.fwBtn.chat{background:#d96f20;border-top:none}.fwBtn.chat:hover{background:#c46118}.fwIcon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.fwBtn.chat .fwIcon{background:rgba(255,255,255,.22);color:#fff}.fwBtn.tour .fwIcon{background:#f0ece5;color:#d96f20}.fwBtn.call .fwIcon{background:#f0ece5;color:#061d2b}.fwBtnText{flex:1;line-height:1.25}.fwBtnText strong{display:block;font-size:13.5px;font-weight:700;color:#061d2b}.fwBtn.chat .fwBtnText strong{color:#fff}.fwBtnText em{display:block;font-size:11.5px;font-style:normal;color:#888;margin-top:1px}.fwBtn.chat .fwBtnText em{color:rgba(255,255,255,.75)}.fwArrow{font-size:17px;color:#bbb;margin-left:4px;line-height:1}.fwBtn.chat .fwArrow{color:rgba(255,255,255,.7)}</style>
+<style>
+/* Mobile widget — start closed */
+@media(max-width:800px){
+  .floatWidgetPanel{opacity:0!important;pointer-events:none!important;transform:scale(.93) translateY(10px)!important}
+  .floatWidgetPanel.open{opacity:1!important;pointer-events:auto!important;transform:none!important}
+  .fwToggle{width:44px;height:44px}
+}
+/* Features grid single-column below 480px */
+@media(max-width:480px){
+  .features{grid-template-columns:1fr!important}
+  .feature{border-left:0;border-top:1px solid var(--line,#d9dde1);padding:16px 8px}
+  .feature:first-child{border-top:0}
+  .heroCopy h1{font-size:34px!important}
+  .heroCopy{padding-top:140px!important}
+  .ctaBand{padding:36px 5.5%}
+  .ctaActions{flex-direction:column}
+  .btn2{width:100%;justify-content:center}
+  .main{padding:24px 16px!important}
+  .crumbs{padding:12px 16px!important}
+  .infoBand{padding:16px 20px}
+  .fpSection{margin-left:-16px!important;margin-right:-16px!important;padding-left:16px!important;padding-right:16px!important}
+}
+/* Floor plan tabs — bigger tap target */
+@media(max-width:700px){
+  .fpLevelTab{padding:14px 6px;font-size:12px}
+  .tourTabsRow button,.photoTabsRow button{padding:13px 14px;font-size:13px}
+}
+/* Commercial photo strip */
+@media(max-width:600px){
+  .commPhotoStrip{grid-template-columns:1fr!important}
+  .commPhotoStrip img{height:220px}
+  .propTab{padding:14px 16px;font-size:11px}
+  .leasingInner{grid-template-columns:1fr!important}
+}
+/* Floor plan detail pages */
+@media(max-width:700px){
+  .detailsBlock{flex-direction:column}
+  .detailsRight{width:100%}
+  .detailsRight .btn{width:100%;justify-content:center}
+  .specs{gap:16px}
+}
+/* Gallery two-col → one-col earlier on phones */
+@media(max-width:500px){
+  .gallery.two{grid-template-columns:1fr!important}
+  .gallery img{height:220px}
+}
+</style>
 </head>
 <body>
 <div class="utilBar" id="utilBar">
@@ -404,6 +451,41 @@ const urlParams=new URLSearchParams(location.search);const wantedInterest=urlPar
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>/* widget_mobile_js_added */
+(function(){
+  if(window.innerWidth<=800){
+    var p=document.getElementById('floatWidgetPanel');
+    var t=document.getElementById('fwToggle');
+    if(p){p.classList.remove('open');p.style.opacity='0';p.style.pointerEvents='none';}
+    if(t)t.classList.remove('open');
+  }
+  // Re-wire toggle to use 'open' instead of 'hidden'
+  var panel=document.getElementById('floatWidgetPanel');
+  var toggle=document.getElementById('fwToggle');
+  if(!toggle||!panel)return;
+  // Remove old listeners by cloning
+  var newToggle=toggle.cloneNode(true);
+  toggle.parentNode.replaceChild(newToggle,toggle);
+  newToggle.addEventListener('click',function(){
+    var isOpen=panel.classList.toggle('open');
+    newToggle.classList.toggle('open',isOpen);
+    if(isOpen){panel.style.opacity='';panel.style.pointerEvents='';}
+    // Also close chat if open
+    var box=document.getElementById('chatBox');
+    if(box&&isOpen)box.classList.remove('open');
+  });
+  // Chat trigger
+  var chatTrigger=document.getElementById('askParmerWidget');
+  if(chatTrigger){
+    chatTrigger.addEventListener('click',function(){
+      panel.classList.remove('open');
+      newToggle.classList.remove('open');
+      var box=document.getElementById('chatBox');
+      if(box)box.classList.add('open');
+    });
+  }
+})();
+</script>
 </body>
 <script>
 document.querySelectorAll('.mapChoice').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.mapChoice').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('auburnMap').src=b.dataset.map;}));
