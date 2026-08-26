@@ -48,7 +48,7 @@
 .socialText strong{font-size:14px;color:var(--navy);letter-spacing:.01em;font-weight:700}
 .socialText span{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#8a8f94;margin-top:3px}
     .askParmer{position:fixed;right:22px;bottom:22px;z-index:100;display:none!important;width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid rgba(255,255,255,.9);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 35px rgba(0,0,0,.28);transition:transform .2s ease,box-shadow .2s ease}.askParmer:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 14px 40px rgba(0,0,0,.32)}.askParmer svg{width:31px;height:31px;display:block}.askParmer .aiSpark{fill:var(--orange);stroke:none}
-    .chatBox{display:none;position:fixed;right:22px;bottom:92px;width:min(360px,calc(100vw - 24px));z-index:200;border-radius:18px;overflow:hidden;box-shadow:0 24px 72px rgba(0,0,0,.32),0 4px 16px rgba(0,0,0,.12);font-family:Inter,system-ui,sans-serif;flex-direction:column}.chatBox.open{display:flex;animation:chatPop .22s cubic-bezier(.34,1.56,.64,1)}@keyframes chatPop{from{opacity:0;transform:scale(.9) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}.chatHead{background:#061d2b;padding:16px 16px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.chatHeadInfo{display:flex;align-items:center;gap:10px}.chatAvatar{width:38px;height:38px;border-radius:50%;background:#d96f20;color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;flex-shrink:0}.chatHeadName{font-size:14px;font-weight:700;color:#fff}.chatHeadSub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}.chatClose{background:rgba(255,255,255,.12);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;padding:0}.chatClose:hover{background:rgba(255,255,255,.25)}.chatThread{flex:1;background:#f7f5f1;padding:14px 13px;overflow-y:auto;max-height:320px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}.chatMsg{display:flex;flex-direction:column;gap:5px}.chatMsg.bot{align-items:flex-start}.chatMsg.user{align-items:flex-end}.chatBubble{max-width:84%;padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.55}.chatMsg.bot .chatBubble{background:#fff;color:#15212a;border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.08)}.chatMsg.user .chatBubble{background:#d96f20;color:#fff;border-bottom-right-radius:4px}.chatQuickReplies{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}.chatChip{padding:7px 13px;background:#fff;border:1.5px solid #d96f20;border-radius:20px;font-size:12px;font-weight:600;color:#d96f20;cursor:pointer;font-family:inherit;transition:.15s}.chatChip:hover{background:#d96f20;color:#fff}.chatTyping{display:flex;align-items:center;gap:4px;padding:10px 14px;background:#fff;border-radius:16px;border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.08);align-self:flex-start;width:fit-content}.chatTyping span{width:7px;height:7px;background:#bbb;border-radius:50%;animation:typingDot 1.2s infinite}.chatTyping span:nth-child(2){animation-delay:.2s}.chatTyping span:nth-child(3){animation-delay:.4s}@keyframes typingDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}.chatFooter{background:#1c2b36;padding:10px 12px 13px;flex-shrink:0}.chatFooterActions{display:flex;gap:8px;margin-bottom:9px}.chatActionBtn{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s;white-space:nowrap}.chatActionBtn:hover{background:rgba(255,255,255,.2)}.chatInputWrap{display:flex;align-items:center;background:rgba(255,255,255,.1);border-radius:24px;padding:5px 6px 5px 14px}.chatInputWrap input{flex:1;background:none;border:none;outline:none;color:#fff;font-size:13.5px;font-family:inherit;padding:3px 0}.chatInputWrap input::placeholder{color:rgba(255,255,255,.4)}.chatSendBtn{width:32px;height:32px;border-radius:50%;background:#d96f20;border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s;margin-left:4px}.chatSendBtn:hover{background:#c46118}
+    .chatBox{display:none;position:fixed;right:22px;bottom:92px;width:min(360px,calc(100vw - 24px));z-index:350;border-radius:18px;overflow:hidden;box-shadow:0 24px 72px rgba(0,0,0,.32),0 4px 16px rgba(0,0,0,.12);font-family:Inter,system-ui,sans-serif;flex-direction:column}.chatBox.open{display:flex;animation:chatPop .22s cubic-bezier(.34,1.56,.64,1)}@keyframes chatPop{from{opacity:0;transform:scale(.9) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}.chatHead{background:#061d2b;padding:16px 16px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.chatHeadInfo{display:flex;align-items:center;gap:10px}.chatAvatar{width:38px;height:38px;border-radius:50%;background:#d96f20;color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;flex-shrink:0}.chatHeadName{font-size:14px;font-weight:700;color:#fff}.chatHeadSub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}.chatClose{background:rgba(255,255,255,.12);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;padding:0}.chatClose:hover{background:rgba(255,255,255,.25)}.chatThread{flex:1;background:#f7f5f1;padding:14px 13px;overflow-y:auto;max-height:320px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}.chatMsg{display:flex;flex-direction:column;gap:5px}.chatMsg.bot{align-items:flex-start}.chatMsg.user{align-items:flex-end}.chatBubble{max-width:84%;padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.55}.chatMsg.bot .chatBubble{background:#fff;color:#15212a;border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.08)}.chatMsg.user .chatBubble{background:#d96f20;color:#fff;border-bottom-right-radius:4px}.chatQuickReplies{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}.chatChip{padding:7px 13px;background:#fff;border:1.5px solid #d96f20;border-radius:20px;font-size:12px;font-weight:600;color:#d96f20;cursor:pointer;font-family:inherit;transition:.15s}.chatChip:hover{background:#d96f20;color:#fff}.chatTyping{display:flex;align-items:center;gap:4px;padding:10px 14px;background:#fff;border-radius:16px;border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.08);align-self:flex-start;width:fit-content}.chatTyping span{width:7px;height:7px;background:#bbb;border-radius:50%;animation:typingDot 1.2s infinite}.chatTyping span:nth-child(2){animation-delay:.2s}.chatTyping span:nth-child(3){animation-delay:.4s}@keyframes typingDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}.chatFooter{background:#1c2b36;padding:10px 12px 13px;flex-shrink:0}.chatFooterActions{display:flex;gap:8px;margin-bottom:9px}.chatActionBtn{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s;white-space:nowrap}.chatActionBtn:hover{background:rgba(255,255,255,.2)}.chatInputWrap{display:flex;align-items:center;background:rgba(255,255,255,.1);border-radius:24px;padding:5px 6px 5px 14px}.chatInputWrap input{flex:1;background:none;border:none;outline:none;color:#fff;font-size:13.5px;font-family:inherit;padding:3px 0}.chatInputWrap input::placeholder{color:rgba(255,255,255,.4)}.chatSendBtn{width:32px;height:32px;border-radius:50%;background:#d96f20;border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s;margin-left:4px}.chatSendBtn:hover{background:#c46118}
     @media(max-width:850px){.collection4,.commercialSplit,.mapWrap{grid-template-columns:1fr}.brandLogo{width:205px}.matterportFrame{height:500px}}
 .navSocial{display:flex;gap:10px;align-items:center;margin-left:6px}.navSocial a{color:#fff;opacity:.75;display:flex;align-items:center;line-height:1;transition:opacity .2s}.navSocial a:hover{opacity:1}.footerSocial{display:flex;gap:14px;margin-top:14px}.footerSocial a{color:#fff;opacity:.65;display:flex;align-items:center;line-height:1;transition:opacity .2s}.footerSocial a:hover{opacity:1}</style>
 <style>
@@ -119,7 +119,7 @@
 .featureItem strong{display:block;font-size:13px;letter-spacing:.02em}
 .featureItem span{display:block;font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.5}
 @media(max-width:850px){.featureStripGrid{flex-direction:column;gap:20px}.heroScroll{display:none}}
-.floorPlansSection{background:#f7f5f1}.fpMarqueeOuter{overflow:hidden;cursor:grab;-webkit-user-select:none;user-select:none}.fpMarqueeOuter:active{cursor:grabbing}.fpTrack{display:flex;gap:22px;width:max-content;animation:fpScroll 36s linear infinite}.fpTrack:hover{animation-play-state:paused}@keyframes fpScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.fpCard{flex:0 0 calc((100% - 44px)/3);background:#fff;box-shadow:0 4px 18px rgba(6,29,43,.09);overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:block}.fpCard:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(6,29,43,.16)}.fpImgBox{background:#f7f5f1;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}.fpImgBox img{width:100%;height:100%;object-fit:contain;padding:16px}.fpCardBody{padding:20px 22px}.fpBadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}.fpUnitName{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--navy);margin:6px 0 4px}.fpSqft{font-size:12px;color:var(--muted);margin:0}.fpImgBragg{flex-direction:column;padding:0;overflow:hidden}.braggTabs{display:flex;width:100%;border-bottom:1px solid #e8e3da;flex-shrink:0;background:#fff}.braggTab{flex:1;padding:9px 4px;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:.15s;font-family:inherit}.braggTab.active{color:var(--orange);border-bottom-color:var(--orange)}.braggPanels{flex:1;position:relative;width:100%;min-height:0}.braggPanel{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:16px;opacity:0;transition:opacity .25s;pointer-events:none}.braggPanel.active{opacity:1}.braggViewLink{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+.floorPlansSection{background:#f7f5f1}.fpCarouselWrap{position:relative;overflow:hidden;padding:0 52px}.fpTrack{display:flex;gap:22px;transition:transform .4s cubic-bezier(.25,.8,.25,1)}.fpArrow{position:absolute;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;border:none;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s;flex-shrink:0}.fpArrow:hover{background:var(--orange)}.fpPrev{left:0}.fpNext{right:0}.fpDots{display:flex;justify-content:center;gap:8px;margin-top:22px}.fpDot{width:7px;height:7px;border-radius:50%;background:#ccc;border:none;cursor:pointer;padding:0;transition:.2s}.fpDot.active{background:var(--navy)}.fpViewLink{display:block;margin-top:10px;font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;text-decoration:none}.fpCard{flex:0 0 calc((100% - 44px)/3);background:#fff;box-shadow:0 4px 18px rgba(6,29,43,.09);overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:block}.fpCard:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(6,29,43,.16)}.fpImgBox{background:#f7f5f1;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}.fpImgBox img{width:100%;height:100%;object-fit:contain;padding:16px}.fpCardBody{padding:20px 22px}.fpBadge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}.fpUnitName{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--navy);margin:6px 0 4px}.fpSqft{font-size:12px;color:var(--muted);margin:0}.fpImgBragg{flex-direction:column;padding:0;overflow:hidden}.braggTabs{display:flex;width:100%;border-bottom:1px solid #e8e3da;flex-shrink:0;background:#fff}.braggTab{flex:1;padding:9px 4px;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;cursor:pointer;transition:.15s;font-family:inherit}.braggTab.active{color:var(--orange);border-bottom-color:var(--orange)}.braggPanels{flex:1;position:relative;width:100%;min-height:0}.braggPanel{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:16px;opacity:0;transition:opacity .25s;pointer-events:none}.braggPanel.active{opacity:1}.braggViewLink{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
 @media(max-width:900px){.fpCard{flex:0 0 calc((100% - 22px)/2)}}@media(max-width:580px){.fpCard{flex:0 0 100%}.fpCarouselWrap{padding:0 36px}}
 </style>
 <style>.floatWidget{position:fixed;right:22px;bottom:22px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px}.fwToggle{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #ddd;box-shadow:0 2px 10px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s}.fwToggle:hover{background:#f5f2ee}.fwToggle svg{transition:transform .28s}.fwToggle.open svg{transform:rotate(180deg)}.floatWidgetPanel{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);width:236px;overflow:hidden;transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}.floatWidgetPanel.hidden{opacity:0;pointer-events:none;transform:scale(.93) translateY(10px)}.fwBtnGroup{display:flex;flex-direction:column}.fwBtn{display:flex;align-items:center;gap:12px;padding:13px 16px;background:#fff;border:none;border-top:1px solid #f0ece5;cursor:pointer;font-family:Inter,system-ui,sans-serif;text-align:left;width:100%;text-decoration:none;transition:background .15s;box-sizing:border-box}.fwBtn:first-child{border-top:none}.fwBtn:hover{background:#faf8f5}.fwBtn.chat{background:#d96f20;border-top:none}.fwBtn.chat:hover{background:#c46118}.fwIcon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.fwBtn.chat .fwIcon{background:rgba(255,255,255,.22);color:#fff}.fwBtn.tour .fwIcon{background:#f0ece5;color:#d96f20}.fwBtn.call .fwIcon{background:#f0ece5;color:#061d2b}.fwBtnText{flex:1;line-height:1.25}.fwBtnText strong{display:block;font-size:13.5px;font-weight:700;color:#061d2b}.fwBtn.chat .fwBtnText strong{color:#fff}.fwBtnText em{display:block;font-size:11.5px;font-style:normal;color:#888;margin-top:1px}.fwBtn.chat .fwBtnText em{color:rgba(255,255,255,.75)}.fwArrow{font-size:17px;color:#bbb;margin-left:4px;line-height:1}.fwBtn.chat .fwArrow{color:rgba(255,255,255,.7)}</style>
@@ -149,7 +149,7 @@
     <div class="eyebrow">Spacious Floor Plans</div>
     <h2 class="sectionTitle">Find Your Perfect Home</h2>
     <p class="lead">From intimate two-bedroom townhomes to five-bedroom brownstones — explore our named floor plans across Richland Village and Bragg Avenue Brownstones. Click any plan to explore the full layout.</p>
-    <div class="fpMarqueeOuter" id="fpMarqueeOuter">
+    <div class="fpCarouselWrap" id="fpCarousel">
       <div class="fpTrack" id="fpTrack">
 
         <!-- Richland Village Floor Plans -->
@@ -161,6 +161,7 @@
             <span class="fpBadge">Richland Village</span>
             <h3 class="fpUnitName">The Cotswold</h3>
             <p class="fpSqft">2 Bedroom &nbsp;·&nbsp; ~1,400 sq ft</p>
+            <span class="fpViewLink">Click to view floor plan &#8250;</span>
           </div>
         </a>
 
@@ -172,6 +173,7 @@
             <span class="fpBadge">Richland Village</span>
             <h3 class="fpUnitName">The Windsor</h3>
             <p class="fpSqft">3 Bedroom &nbsp;·&nbsp; ~1,600 sq ft</p>
+            <span class="fpViewLink">Click to view floor plan &#8250;</span>
           </div>
         </a>
 
@@ -183,11 +185,12 @@
             <span class="fpBadge">Richland Village</span>
             <h3 class="fpUnitName">The Kensington</h3>
             <p class="fpSqft">4 Bedroom &nbsp;·&nbsp; ~1,700 sq ft</p>
+            <span class="fpViewLink">Click to view floor plan &#8250;</span>
           </div>
         </a>
 
         <!-- Bragg Avenue Brownstones – single 3-story unit with tabs -->
-        <div class="fpCard fpCardBragg">
+        <a class="fpCard fpCardBragg" href="bragg-brownstones.html#floorplans">
           <div class="fpImgBox fpImgBragg">
             <div class="braggTabs">
               <button class="braggTab active" data-floor="0">Ground</button>
@@ -204,12 +207,23 @@
             <span class="fpBadge">Bragg Brownstones</span>
             <h3 class="fpUnitName">Bragg Brownstone</h3>
             <p class="fpSqft">3-Story Townhome &nbsp;·&nbsp; 2,772 sq ft</p>
-            <a class="braggViewLink" href="bragg-brownstones.html#floorplans">View all floors &#8250;</a>
+            <span class="fpViewLink">Click to view floor plans &#8250;</span>
           </div>
-        </div>
+        </a>
 
       </div><!-- end fpTrack -->
+
+      <button class="fpArrow fpPrev" id="fpPrev" aria-label="Previous floor plan">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="fpArrow fpNext" id="fpNext" aria-label="Next floor plan">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div><!-- end fpCarouselWrap -->
+    <div class="fpDots" id="fpDots">
+      <button class="fpDot active" data-index="0"></button>
+      <button class="fpDot" data-index="1"></button>
+    </div>
 
 
 
@@ -371,7 +385,7 @@ document.querySelectorAll('.mapChoice').forEach(b=>b.addEventListener('click',()
     setTimeout(function(){
       thread.removeChild(typing);
       addBubble(text,'bot');
-    },820);
+    },550);
   }
 
   function answer(){
@@ -408,12 +422,32 @@ document.querySelectorAll('.mapChoice').forEach(b=>b.addEventListener('click',()
   if(closeBtn) closeBtn.addEventListener('click',function(){box.classList.remove('open');});
 })();
 
-// ── Floor Plans Marquee ──
+// ── Floor Plans Carousel ──
 (function(){
   var track = document.getElementById('fpTrack');
   if(!track) return;
-  // Duplicate cards for seamless infinite loop
-  track.innerHTML += track.innerHTML;
+  var cards = track.querySelectorAll('.fpCard');
+  var dots = document.querySelectorAll('.fpDot');
+  var total = cards.length;
+  var current = 0;
+  function getVisible(){ if(window.innerWidth<=580)return 1; if(window.innerWidth<=900)return 2; return 3; }
+  function goTo(idx){
+    var visible = getVisible();
+    var max = Math.max(0, total - visible);
+    if(idx < 0) idx = max;
+    if(idx > max) idx = 0;
+    current = idx;
+    var cardW = cards[0].offsetWidth + 22;
+    track.style.transform = 'translateX(-' + (current * cardW) + 'px)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  var prev = document.getElementById('fpPrev');
+  var next = document.getElementById('fpNext');
+  if(prev) prev.addEventListener('click', function(){ goTo(current-1); });
+  if(next) next.addEventListener('click', function(){ goTo(current+1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ goTo(parseInt(d.dataset.index)); }); });
+  window.addEventListener('resize', function(){ goTo(current); });
+  goTo(0);
 })();
 
 // ── Bragg Floor Plan Tabs ──
@@ -435,15 +469,31 @@ document.querySelectorAll('.mapChoice').forEach(b=>b.addEventListener('click',()
   var panel = document.getElementById('floatWidgetPanel');
   var toggle = document.getElementById('fwToggle');
   var chatTrigger = document.getElementById('askParmerWidget');
+  var box = document.getElementById('chatBox');
   if(!toggle || !panel) return;
+
+  function closePanel(){
+    panel.classList.add('hidden');
+    toggle.classList.remove('open');
+  }
+  function openPanel(){
+    panel.classList.remove('hidden');
+    toggle.classList.add('open');
+  }
+
   toggle.addEventListener('click', function(){
-    panel.classList.toggle('hidden');
-    toggle.classList.toggle('open');
+    if(panel.classList.contains('hidden')){
+      if(box) box.classList.remove('open');
+      openPanel();
+    } else {
+      closePanel();
+    }
   });
+
   if(chatTrigger){
     chatTrigger.addEventListener('click', function(){
-      var box = document.getElementById('chatBox');
-      if(box) box.classList.toggle('open');
+      closePanel();
+      if(box) box.classList.add('open');
     });
   }
 })();
