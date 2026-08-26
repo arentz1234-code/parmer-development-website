@@ -127,7 +127,7 @@
       min-height: 100vh;
       background-image: url('assets/bragg-main-new.jpeg');
       background-size: cover;
-      background-position: center 40%;
+      background-position: 68% 40%;
       display: flex;
       align-items: flex-end;
     }
@@ -660,6 +660,12 @@
       .footerRight { text-align: left; }
       .footerSocial { justify-content: flex-start; }
     }
+    .propTabs{background:#f7f5f1;border-bottom:1px solid #d9dde1}
+    .propTabInner{max-width:1100px;margin:0 auto;padding:0 5.5%;display:flex;gap:0}
+    .propTab{padding:16px 28px;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-1px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64707a;cursor:pointer;transition:.15s;font-family:inherit}
+    .propTab.active{color:#d96f20;border-bottom-color:#d96f20}
+    .propTab:hover{color:#d96f20}
+
     @media (max-width: 800px) {
       .siteHeader { height: 68px; padding: 0 20px; }
       .brand { width: 185px; }
@@ -736,6 +742,17 @@
   <div class="crumbs">
     <a href="index.html">Home</a> &nbsp;›&nbsp; Commercial
   </div>
+
+  <!-- ─── Property tabs ─── -->
+  <div class="propTabs">
+    <div class="propTabInner">
+      <button class="propTab active" data-prop="bragg">Bragg Avenue Brownstones</button>
+      <button class="propTab" data-prop="richland">Richland Village</button>
+    </div>
+  </div>
+
+  <!-- ─── Bragg panel ─── -->
+  <div class="propPanel" id="panel-bragg">
 
   <!-- ─── Main leasing section ─── -->
   <section class="leasingBand">
@@ -908,6 +925,97 @@
     </div>
   </section>
 
+  </div><!-- /#panel-bragg -->
+
+  <!-- ─── Richland Village panel ─── -->
+  <div class="propPanel" id="panel-richland" style="display:none;">
+    <section class="leasingBand">
+      <div class="leasingInner">
+        <div class="leasingLeft">
+          <p class="eyebrow">Commercial Leasing</p>
+          <h2>Richland Village</h2>
+          <p class="leasingLead">
+            Ground-floor commercial space at Richland Village on Richland Road &mdash; Auburn&rsquo;s mixed-use walkable community. Street-level presence with established foot traffic and a built-in residential neighborhood above.
+          </p>
+          <div class="commStats">
+            <div class="commStat"><strong>Ground Floor</strong><span>Street-Level Retail</span></div>
+            <div class="commStat"><strong>Richland Road</strong><span>Auburn, Alabama</span></div>
+            <div class="commStat"><strong>Available</strong><span>Contact for Details</span></div>
+          </div>
+          <div class="commFeatures">
+            <div class="commFeature">
+              <div class="commFeatureDot"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span>Established walkable neighborhood with consistent foot traffic</span>
+            </div>
+            <div class="commFeature">
+              <div class="commFeatureDot"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span>Mixed-use building with residential tenants above the commercial spaces</span>
+            </div>
+            <div class="commFeature">
+              <div class="commFeatureDot"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span>Steps from Auburn University and Toomer&rsquo;s Corner</span>
+            </div>
+            <div class="commFeature">
+              <div class="commFeatureDot"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span>Street-facing presence in one of Auburn&rsquo;s most active residential corridors</span>
+            </div>
+          </div>
+          <div class="commCtas">
+            <a class="commBtn primary" href="mailto:leasing@parmerdevelopment.com">Inquire About This Space</a>
+            <a class="commBtn ghost" href="mailto:leasing@parmerdevelopment.com">Email Leasing</a>
+          </div>
+        </div>
+        <div>
+          <div class="commCard">
+            <div class="commCardTop">Space Details</div>
+            <div class="commCardBody">
+              <div class="commDetail"><span>Type</span><span>Ground-Floor Retail</span></div>
+              <div class="commDetail"><span>Address</span><span>538 Richland Rd, Auburn</span></div>
+              <div class="commDetail"><span>Community</span><span>Richland Village</span></div>
+              <div class="commDetail"><span>Availability</span><span>Contact for Details</span></div>
+              <div class="commDetail"><span>Lease Type</span><span>Contact for Terms</span></div>
+              <div class="commDetail"><span>Contact</span><span>(334) 750-2059</span></div>
+            </div>
+            <p class="commCardNote">Contact our leasing team to discuss Richland Village commercial availability and terms.</p>
+            <a class="commCardPhone" href="tel:+13347502059">(334) 750-2059</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="whySection">
+      <div class="whyInner">
+        <div class="whyHeader">
+          <p class="eyebrow">Location Highlights</p>
+          <h2>Why Richland Village?</h2>
+          <p>Richland Village is one of Auburn&rsquo;s most established mixed-use communities &mdash; a walkable neighborhood with strong residential density, proximity to campus, and consistent daily foot traffic from residents, students, and the broader Auburn community.</p>
+        </div>
+        <div class="whyGrid">
+          <div class="whyCard">
+            <div class="whyCardIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+            <h3>Established Community</h3>
+            <p>Richland Village has an active, loyal residential base &mdash; giving ground-floor businesses a built-in daily customer pool from day one.</p>
+          </div>
+          <div class="whyCard">
+            <div class="whyCardIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg></div>
+            <h3>Walkable Location</h3>
+            <p>Situated on Richland Road in one of Auburn&rsquo;s most walkable corridors, convenient to campus, downtown, and everyday destinations.</p>
+          </div>
+          <div class="whyCard">
+            <div class="whyCardIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg></div>
+            <h3>Mixed-Use Synergy</h3>
+            <p>Residents living above the commercial spaces naturally drive traffic and support the businesses below &mdash; a true mixed-use dynamic.</p>
+          </div>
+          <div class="whyCard">
+            <div class="whyCardIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+            <h3>Street Presence</h3>
+            <p>Ground-floor frontage on Richland Road provides visibility and access to the neighborhood&rsquo;s daily foot and vehicle traffic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /#panel-richland -->
+
   <!-- ─── Location + map ─── -->
   <section class="locationBand">
     <div class="locationInner">
@@ -988,6 +1096,18 @@
     </div>
     <div class="copyright">&copy; 2026 Parmer Development. All rights reserved.</div>
   </footer>
+
+  <script>
+  document.querySelectorAll('.propTab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var prop=tab.dataset.prop;
+      document.querySelectorAll('.propTab').forEach(function(t){t.classList.remove('active');});
+      tab.classList.add('active');
+      document.querySelectorAll('.propPanel').forEach(function(p){p.style.display='none';});
+      document.getElementById('panel-'+prop).style.display='block';
+    });
+  });
+  </script>
 
 </body>
 </html>
