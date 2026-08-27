@@ -224,12 +224,22 @@
 @media(max-width:1000px){.discoverGrid{grid-template-columns:1fr 1fr}.locTiles{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.discoverGrid{grid-template-columns:1fr}.locTiles{grid-template-columns:1fr 1fr}.subFilters{flex-direction:column;gap:14px}}
 
-#propertyMap{height:420px;width:100%;border:1px solid #e8e3da}
+.mapIsolate{position:relative;z-index:1;isolation:isolate;width:100%}
+#propertyMap{height:420px;width:100%;border:1px solid #e8e3da;position:relative;display:block}
 .pmPin{filter:drop-shadow(0 3px 8px rgba(0,0,0,.35));cursor:pointer;transition:transform .18s,filter .18s;transform-origin:bottom center}
 .pmPin:hover{transform:scale(1.15)}
 .pmPinOn{transform:scale(1.15)}
 .leaflet-popup-content-wrapper{border-radius:2px;box-shadow:0 4px 18px rgba(0,0,0,.15)}
 .leaflet-popup-content{margin:12px 16px;line-height:1.5}
+.leaflet-pane{z-index:4!important}
+.leaflet-tile-pane{z-index:2!important}
+.leaflet-overlay-pane{z-index:3!important}
+.leaflet-shadow-pane{z-index:4!important}
+.leaflet-marker-pane{z-index:5!important}
+.leaflet-tooltip-pane{z-index:6!important}
+.leaflet-popup-pane{z-index:7!important}
+.leaflet-top,.leaflet-bottom{z-index:8!important}
+#propertyMap .leaflet-control-container{z-index:8!important}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/><script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script></head>
 <body>
@@ -272,7 +282,7 @@
 <p class="lead">Limited homes available. Browse by neighborhood and bedrooms &mdash; secure yours before they&rsquo;re gone.</p>
 </div>
 
-<div id="propertyMap" class="discoverMapBox"></div>
+<div class="mapIsolate"><div id="propertyMap" class="discoverMapBox"></div></div>
 
 <div class="locTiles">
 <button class="locTile active" data-loc="all" data-map="https://www.google.com/maps?q=Auburn+University,+Auburn,+AL&output=embed">
