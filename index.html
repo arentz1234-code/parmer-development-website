@@ -184,8 +184,10 @@
 
 /* ─── Discover / Find Section ─── */
 .discoverSection{background:#f7f5f1;padding:0 0 90px}
-.discoverLeaseBanner{background:var(--navy);color:#fff;padding:14px 0;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;width:100%;overflow:hidden;margin-bottom:0}
-.discoverLeaseBannerInner{display:flex;white-space:nowrap;will-change:transform}
+.discoverLeaseBanner{background:var(--navy);color:#fff;padding:16px 0;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;width:100%;overflow:hidden;margin-bottom:0}
+.dlbInner{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.dlbLeft,.dlbRight{display:inline-block;will-change:transform}
+.dlbDot{display:inline-block}
 .discoverHead{text-align:center;margin:36px 0 32px}
 
 
@@ -286,7 +288,7 @@
 <section id="find" class="discoverSection">
 <div class="container">
 
-<div class="discoverLeaseBanner"><div class="discoverLeaseBannerInner"><span>Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited Availability &nbsp;&middot;&nbsp; Secure Your Space Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div></div>
+<div class="discoverLeaseBanner"><div class="dlbInner"><span class="dlbLeft">Limited Availability</span><span class="dlbDot">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span class="dlbRight">Secure Your Space Today</span></div></div>
 <div class="discoverHead">
 <h2 class="sectionTitle">Find Your Place in Auburn.</h2>
 <p class="lead">Browse by neighborhood and bedrooms &mdash; secure yours before they&rsquo;re gone.</p>
@@ -545,13 +547,23 @@ document.querySelectorAll('.dCardFp').forEach(function(fp){
 });
 })();
 
-// Scroll-driven banner parallax
+// Scroll-driven banner convergence
 (function(){
-  var inner = document.querySelector('.discoverLeaseBannerInner');
-  if(!inner) return;
-  window.addEventListener('scroll', function(){
-    inner.style.transform = 'translateX(-' + (window.scrollY * 0.25) + 'px)';
-  }, {passive:true});
+  var banner = document.querySelector('.discoverLeaseBanner');
+  var left   = document.querySelector('.dlbLeft');
+  var right  = document.querySelector('.dlbRight');
+  if(!banner||!left||!right) return;
+  function update(){
+    var rect = banner.getBoundingClientRect();
+    var wh   = window.innerHeight;
+    // 0 = banner at bottom of viewport, 1 = banner at top
+    var progress = Math.max(0, Math.min(1, 1 - rect.top / wh));
+    var offset = (1 - progress) * 55;
+    left.style.transform  = 'translateX(-' + offset + 'vw)';
+    right.style.transform = 'translateX('  + offset + 'vw)';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
 })();
 
 </script>
