@@ -392,6 +392,23 @@
     }
     .commCardPhone:hover { background: rgba(217,111,32,.25); }
 
+    /* ─── Spaces panel ─── */
+    .spacesPanel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:32px;position:sticky;top:102px}
+    .spacesHeader{display:flex;align-items:center;gap:18px;margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+    .spacesCount{font-family:'Playfair Display',serif;font-size:54px;font-weight:500;color:var(--orange);line-height:1;flex-shrink:0}
+    .spacesCountLabel{font-size:15px;font-weight:700;color:#fff;line-height:1.2}
+    .spacesCountSub{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px;text-transform:uppercase;letter-spacing:.06em}
+    .spaceCard{padding:16px 20px;margin-bottom:10px;border-left:3px solid var(--orange);background:rgba(255,255,255,.05)}
+    .spaceCard:last-of-type{margin-bottom:0}
+    .spaceCard.leased{border-left-color:rgba(255,255,255,.15);opacity:.55}
+    .spaceCardTop{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .spaceType{font-size:13px;font-weight:700;color:#fff}
+    .spaceCard.leased .spaceType{color:rgba(255,255,255,.5)}
+    .spaceStatus{display:inline-block;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .spaceStatus.available{background:rgba(217,111,32,.18);color:var(--orange);border:1px solid rgba(217,111,32,.3)}
+    .spaceStatus.leased{background:rgba(255,255,255,.06);color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.12)}
+    .spaceCardNote{font-size:12px;color:rgba(255,255,255,.5);line-height:1.55;margin:0}
+
     /* ─── Why Bragg Ave section ─── */
     .whySection {
       padding: 88px 5.5%;
@@ -837,12 +854,12 @@
         <!-- Stats -->
         <div class="commStats">
           <div class="commStat">
-            <strong>Ground Floor</strong>
-            <span>Street-Level Retail</span>
+            <strong>3 Spaces</strong>
+            <span>Available Now</span>
           </div>
           <div class="commStat">
-            <strong>Bragg Avenue</strong>
-            <span>Uptown Auburn</span>
+            <strong>1 Street Level</strong>
+            <span>Direct Frontage</span>
           </div>
           <div class="commStat">
             <strong>2026</strong>
@@ -893,39 +910,38 @@
         </div>
       </div>
 
-      <!-- Right: Space Details card -->
+      <!-- Right: Available Spaces -->
       <div>
-        <div class="commCard">
-          <div class="commCardTop">Space Details</div>
-          <div class="commCardBody">
-            <div class="commDetail">
-              <span>Type</span>
-              <span>Ground-Floor Retail</span>
-            </div>
-            <div class="commDetail">
-              <span>Address</span>
-              <span>152 Bragg Ave, Auburn</span>
-            </div>
-            <div class="commDetail">
-              <span>Floor Plan</span>
-              <span>Being Finalized</span>
-            </div>
-            <div class="commDetail">
-              <span>Availability</span>
-              <span>2026 Delivery</span>
-            </div>
-            <div class="commDetail">
-              <span>Lease Type</span>
-              <span>Contact for Terms</span>
-            </div>
-            <div class="commDetail">
-              <span>Contact</span>
-              <span>(334) 750-2059</span>
+        <div class="spacesPanel">
+          <div class="spacesHeader">
+            <div class="spacesCount">3</div>
+            <div>
+              <div class="spacesCountLabel">Spaces Available</div>
+              <div class="spacesCountSub">152 Bragg Ave · 2026 Delivery</div>
             </div>
           </div>
-          <p class="commCardNote">
-            Floor plans and square footage are being finalized. Reach out early to discuss terms and secure your position.
-          </p>
+          <div class="spaceCard available">
+            <div class="spaceCardTop">
+              <span class="spaceType">Space 1 — Street Level</span>
+              <span class="spaceStatus available">Available</span>
+            </div>
+            <p class="spaceCardNote">Prime Bragg Avenue frontage with a direct street-facing entrance and maximum pedestrian visibility.</p>
+          </div>
+          <div class="spaceCard available">
+            <div class="spaceCardTop">
+              <span class="spaceType">Space 2</span>
+              <span class="spaceStatus available">Available</span>
+            </div>
+            <p class="spaceCardNote">Ground-floor commercial space with interior access and shared corridor.</p>
+          </div>
+          <div class="spaceCard available">
+            <div class="spaceCardTop">
+              <span class="spaceType">Space 3</span>
+              <span class="spaceStatus available">Available</span>
+            </div>
+            <p class="spaceCardNote">Ground-floor commercial space with interior access and shared corridor.</p>
+          </div>
+          <p class="commCardNote">Square footage and floor plans are being finalized. Contact us early to discuss terms and secure your space.</p>
           <a class="commCardPhone" href="tel:+13347502059">(334) 750-2059</a>
         </div>
       </div>
@@ -1013,9 +1029,9 @@
             Ground-floor commercial space at Richland Village on Richland Road &mdash; Auburn&rsquo;s mixed-use walkable community. Street-level presence with established foot traffic and a built-in residential neighborhood above.
           </p>
           <div class="commStats">
-            <div class="commStat"><strong>Ground Floor</strong><span>Street-Level Retail</span></div>
-            <div class="commStat"><strong>Richland Road</strong><span>Auburn, Alabama</span></div>
-            <div class="commStat"><strong>Available</strong><span>Contact for Details</span></div>
+            <div class="commStat"><strong>2 Spaces</strong><span>Total</span></div>
+            <div class="commStat"><strong>1 Available</strong><span>Ready to Lease</span></div>
+            <div class="commStat"><strong>1 Leased</strong><span>Currently Occupied</span></div>
           </div>
           <div class="commFeatures">
             <div class="commFeature">
@@ -1041,17 +1057,29 @@
           </div>
         </div>
         <div>
-          <div class="commCard">
-            <div class="commCardTop">Space Details</div>
-            <div class="commCardBody">
-              <div class="commDetail"><span>Type</span><span>Ground-Floor Retail</span></div>
-              <div class="commDetail"><span>Address</span><span>538 Richland Rd, Auburn</span></div>
-              <div class="commDetail"><span>Community</span><span>Richland Village</span></div>
-              <div class="commDetail"><span>Availability</span><span>Contact for Details</span></div>
-              <div class="commDetail"><span>Lease Type</span><span>Contact for Terms</span></div>
-              <div class="commDetail"><span>Contact</span><span>(334) 750-2059</span></div>
+          <div class="spacesPanel">
+            <div class="spacesHeader">
+              <div class="spacesCount">1</div>
+              <div>
+                <div class="spacesCountLabel">Space Available</div>
+                <div class="spacesCountSub">538 Richland Rd · 1 of 2 leased</div>
+              </div>
             </div>
-            <p class="commCardNote">Contact our leasing team to discuss Richland Village commercial availability and terms.</p>
+            <div class="spaceCard available">
+              <div class="spaceCardTop">
+                <span class="spaceType">Space A</span>
+                <span class="spaceStatus available">Available</span>
+              </div>
+              <p class="spaceCardNote">Ground-floor retail on Richland Road with street frontage and direct pedestrian access.</p>
+            </div>
+            <div class="spaceCard leased">
+              <div class="spaceCardTop">
+                <span class="spaceType">Space B</span>
+                <span class="spaceStatus leased">Leased</span>
+              </div>
+              <p class="spaceCardNote">Ground-floor commercial space. Currently under active lease.</p>
+            </div>
+            <p class="commCardNote">One space remains — contact our leasing team to discuss availability and terms.</p>
             <a class="commCardPhone" href="tel:+13347502059">(334) 750-2059</a>
           </div>
         </div>
