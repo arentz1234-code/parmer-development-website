@@ -506,9 +506,8 @@ function update(){
   var cards=document.querySelectorAll('#discoverGrid .discoverCard');
   var n=0;
   cards.forEach(function(c){
-    var cs=c.dataset.comingsoon==='true';
     var bl=state.loc==='all'||c.dataset.loc===state.loc;
-    var show=cs?bl:(bl&&(state.beds==='all'||c.dataset.beds===state.beds));
+    var show=bl&&(state.beds==='all'||c.dataset.beds===state.beds);
     c.style.display=show?'':'none';
     if(show)n++;
   });
