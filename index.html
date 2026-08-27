@@ -288,7 +288,7 @@
 <section id="find" class="discoverSection">
 <div class="container">
 
-<div class="discoverLeaseBanner"><div class="dlbInner"><span class="dlbLeft">Limited Availability</span><span class="dlbDot">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span class="dlbRight">Secure Your Space Today</span></div></div>
+<div class="discoverLeaseBanner"><div class="dlbInner"><span class="dlbLeft">Limited Availability</span><span class="dlbDot">&nbsp;&nbsp;&middot;&nbsp;&nbsp;Now Leasing Fall 2027&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><span class="dlbRight">Secure Your Space Today</span></div></div>
 <div class="discoverHead">
 <h2 class="sectionTitle">Find Your Place in Auburn.</h2>
 <p class="lead">Browse by neighborhood and bedrooms &mdash; secure yours before they&rsquo;re gone.</p>
@@ -556,7 +556,7 @@ document.querySelectorAll('.dCardFp').forEach(function(fp){
     var rect = banner.getBoundingClientRect();
     var wh   = window.innerHeight;
     // 0 = banner at bottom of viewport, 1 = banner at top
-    var progress = Math.max(0, Math.min(1, 1 - rect.top / wh));
+    var progress = Math.max(0, Math.min(1, 2 * (1 - rect.top / wh)));
     var offset = (1 - progress) * 55;
     left.style.transform  = 'translateX(-' + offset + 'vw)';
     right.style.transform = 'translateX('  + offset + 'vw)';
