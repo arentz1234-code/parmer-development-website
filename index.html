@@ -199,7 +199,7 @@
 .locTile.active 
 .locTileCount{display:block;font-size:10px;color:#bbb}
 .locTile.active .locTileCount{color:rgba(255,255,255,.4)}
-.subFilters{background:#fff;border:1px solid #e8e3da;border-top:none;padding:16px 24px;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.bedFilter{display:flex;align-items:center;gap:20px;padding:18px 0;margin-bottom:20px;border-bottom:2px solid #e8e3da}.bedFilterLabel{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}.filterBtns{display:flex;gap:8px;flex-wrap:wrap}.fBtn{padding:10px 22px;border:1.5px solid #d0c9be;background:#fff;color:var(--navy);font-size:13px;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s,color .15s;letter-spacing:.02em}.fBtn:hover{border-color:var(--navy)}.fBtn.active{background:var(--navy);border-color:var(--navy);color:#fff}
 .discoverCount{font-size:12px;color:#999;margin:0 0 18px;padding-left:2px}
 .discoverGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .discoverCard{background:#fff;border:1px solid #e8e3da;display:block;transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit}
@@ -411,18 +411,8 @@
 </button>
 </div>
 
-<div class="subFilters">
-<div class="filterRow">
-<span class="filterGroupLabel">Price</span>
-<div class="filterBtns" data-filter="price">
-<button class="fBtn active" data-val="all">Any Price</button>
-<button class="fBtn" data-val="under-2000">Under $2,000</button>
-<button class="fBtn" data-val="2000-3000">$2,000&ndash;$3,000</button>
-<button class="fBtn" data-val="3000-plus">$3,000+</button>
-</div>
-</div>
-<div class="filterRow">
-<span class="filterGroupLabel">Bedrooms</span>
+<div class="bedFilter">
+<span class="bedFilterLabel">Bedrooms</span>
 <div class="filterBtns" data-filter="beds">
 <button class="fBtn active" data-val="all">Any</button>
 <button class="fBtn" data-val="2">2 BD</button>
@@ -431,53 +421,52 @@
 <button class="fBtn" data-val="5">5 BD</button>
 </div>
 </div>
-</div>
 
 <p class="discoverCount" id="discoverCount">10 homes match your search</p>
 
 <div class="discoverGrid" id="discoverGrid">
 
-<div class="discoverCard" data-loc="richland-road" data-beds="2" data-price="under-2000">
+<div class="discoverCard" data-loc="richland-road" data-beds="2">
 <div class="dCardImg"><img src="assets/richland-hero.jpg" alt="The Cotswold"/><span class="dCardBadge">Richland Village</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Cotswold</h3><p class="dCardMeta">2 BD &nbsp;&middot;&nbsp; 2.5 BA &nbsp;&middot;&nbsp; ~1,400 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-cotswold.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="richland-road" data-beds="3" data-price="2000-3000">
+<div class="discoverCard" data-loc="richland-road" data-beds="3">
 <div class="dCardImg"><img src="assets/phase3-3br-exterior.jpg" alt="The Windsor"/><span class="dCardBadge">Richland Village</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Windsor</h3><p class="dCardMeta">3 BD &nbsp;&middot;&nbsp; 3 BA &nbsp;&middot;&nbsp; ~1,600 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-windsor.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="richland-road" data-beds="4" data-price="2000-3000">
+<div class="discoverCard" data-loc="richland-road" data-beds="4">
 <div class="dCardImg"><img src="assets/phase3-4br-living.jpg" alt="The Kensington"/><span class="dCardBadge">Richland Village</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Kensington</h3><p class="dCardMeta">4 BD &nbsp;&middot;&nbsp; 4 BA &nbsp;&middot;&nbsp; ~1,700 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-kensington.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="bragg-ave" data-beds="5" data-price="3000-plus">
+<div class="discoverCard" data-loc="bragg-ave" data-beds="5">
 <div class="dCardImg"><img src="assets/bragg-hero.jpg" alt="The Ashford"/><span class="dCardBadge">Bragg Brownstones</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Ashford</h3><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-ashford.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="bragg-ave" data-beds="5" data-price="3000-plus">
+<div class="discoverCard" data-loc="bragg-ave" data-beds="5">
 <div class="dCardImg"><img src="assets/bragg-main-new.jpeg" alt="The Pemberton"/><span class="dCardBadge">Bragg Brownstones</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Pemberton</h3><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-pemberton.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="bragg-ave" data-beds="5" data-price="3000-plus">
+<div class="discoverCard" data-loc="bragg-ave" data-beds="5">
 <div class="dCardImg"><img src="assets/bragg-gallery-2.jpg" alt="The Balmoral"/><span class="dCardBadge">Bragg Brownstones</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Balmoral</h3><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-balmoral.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="judd-ave" data-beds="2" data-price="under-2000">
+<div class="discoverCard" data-loc="judd-ave" data-beds="2">
 <div class="dCardImg"><img src="assets/judd-main.jpeg" alt="The Fairytale"/><span class="dCardBadge">Judd Ave Cottages</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Fairytale</h3><p class="dCardMeta">2 BD &nbsp;&middot;&nbsp; 2 BA &nbsp;&middot;&nbsp; ~1,250 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="judd-ave" data-beds="3" data-price="under-2000">
+<div class="discoverCard" data-loc="judd-ave" data-beds="3">
 <div class="dCardImg"><img src="assets/judd-kitchen.png" alt="The Modern"/><span class="dCardBadge">Judd Ave Cottages</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Modern</h3><p class="dCardMeta">3 BD &nbsp;&middot;&nbsp; 2 BA &nbsp;&middot;&nbsp; ~1,600 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
 </div>
 
-<div class="discoverCard" data-loc="judd-ave" data-beds="4" data-price="2000-3000">
+<div class="discoverCard" data-loc="judd-ave" data-beds="4">
 <div class="dCardImg"><img src="assets/judd-bedroom.png" alt="The Woodsy"/><span class="dCardBadge">Judd Ave Cottages</span></div>
 <div class="dCardBody"><h3 class="dCardName">The Woodsy</h3><p class="dCardMeta">4 BD &nbsp;&middot;&nbsp; 3 BA &nbsp;&middot;&nbsp; ~2,055 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
 </div>
@@ -537,7 +526,7 @@ function flyTo(loc){
 }
 
 // ── Filters ──────────────────────────────────────────────
-var state={loc:'all',price:'all',beds:'all'};
+var state={loc:'all',beds:'all'};
 
 function activateLoc(loc){
   state.loc=loc;
@@ -554,7 +543,7 @@ function update(){
   cards.forEach(function(c){
     var cs=c.dataset.comingsoon==='true';
     var bl=state.loc==='all'||c.dataset.loc===state.loc;
-    var show=cs?bl:(bl&&(state.price==='all'||c.dataset.price===state.price)&&(state.beds==='all'||c.dataset.beds===state.beds));
+    var show=cs?bl:(bl&&(state.beds==='all'||c.dataset.beds===state.beds));
     c.style.display=show?'':'none';
     if(show)n++;
   });
