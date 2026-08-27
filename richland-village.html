@@ -15,7 +15,16 @@
 .fpArrow:hover{opacity:.85}
 .fpTrack{display:flex;gap:28px;flex:1;justify-content:center}
 .fpSlide{flex:1;min-width:0;text-align:center}
-.fpSlide img{width:100%;max-width:260px;height:auto;display:block;margin:0 auto 14px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.1))}
+.fpSlideLink{display:block;text-decoration:none;border:1px solid #e5e0d8;padding:22px 18px;transition:border-color .2s,box-shadow .2s}
+.fpSlideLink:hover{border-color:var(--orange);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.fpSlideName{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:var(--navy);margin-bottom:16px;letter-spacing:-.01em}
+.fpSlideSbs{display:flex;gap:12px;margin-bottom:14px}
+.fpSbsPane{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px}
+.fpSbsPane img{width:100%;height:150px;object-fit:contain;display:block}
+.fpSbsLbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#999}
+.fpSlideInfo{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #e5e0d8}
+.fpSlideBeds{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em}
+.fpSlideViewLnk{font-size:11px;color:var(--orange);font-weight:600}
 .fpLabel{font-size:14px;font-weight:700;color:var(--navy);letter-spacing:.02em}
 .fpDots{display:none;gap:8px;justify-content:center;margin-top:18px}
 .fpDot{width:8px;height:8px;border-radius:50%;background:#d3cfc8;cursor:pointer;transition:background .2s}
@@ -77,7 +86,7 @@
 @media(max-width:800px){
   .menuBtn{display:block}
   .nav{white-space:normal}
-  H6px;left:0;right:0;bottom:0;background:#061d2b;flex-direction:column;align-items:flex-start;gap:0;padding:24px 28px 40px;z-index:200;overflow-y:auto}
+  .nav.open{display:flex!important;position:fixed;top:116px;left:0;right:0;bottom:0;background:#061d2b;flex-direction:column;align-items:flex-start;gap:0;padding:24px 28px 40px;z-index:200;overflow-y:auto}
   .nav.open>a{font-size:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);width:100%;display:block}
   .nav.open .navDrop{width:100%;border-bottom:1px solid rgba(255,255,255,.12)}
   .nav.open .navDrop>a{font-size:16px;padding:16px 0;width:100%;display:block}
@@ -92,7 +101,7 @@
 <div class="announceBanner">Now Leasing &nbsp;·&nbsp; Fall 2027</div>
 <section class="hero" style="background-image:url('assets/richland-hero.jpg')"><header class="siteHeader"><a class="brand" href="index.html"><img src="assets/parmer-logo-white-master.png" alt="Parmer Development"></a><nav class="nav"><a href="about-parmer.html">Our Story</a><div class="navDrop"><a href="index.html#portfolio">Communities ▾</a><div class="dropMenu"><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase III</a></div></div><a href="index.html#commercial">Commercial</a><div class="navDrop"><a href="richland-village.html#tour">Virtual Tours ▾</a><div class="dropMenu"><a href="richland-village.html#tour">Richland Village</a><a href="judd-cottages.html#tour">Judd Avenue Cottages</a></div></div><a class="apply" href="index.html?interest=Richland%20Village#contact">Apply</a><span class="navSocial"><a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></span></nav><button class="menuBtn" id="menuBtn" aria-label="Open menu">&#9776;</button></header><div class="heroCopy"><h1>Richland Village</h1><p>Mixed-use living shaped around walkability, gathering, and everyday connection.</p></div></section>
 <div class="crumbs"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="index.html#portfolio">Communities</a> &nbsp;›&nbsp; Richland Village</div>
-<main class="main"><div class="introGrid"><section class="intro"><div class="eyebrow">The Community</div><h2>A place designed around connection.</h2><p>Richland Village brings together homes, shared spaces, and neighborhood-scale commercial life with an emphasis on walkability and connection. It is designed to feel welcoming, familiar, and distinctly Auburn.</p></section></div><div class="features"><div class="feature"><span class="icon"></span><h3>Mixed-Use Living</h3><p>Homes, shared space &amp; neighborhood commercial</p></div><div class="feature"><span class="icon"></span><h3>Walkable by Design</h3><p>Everyday connection, close to home</p></div><div class="feature"><span class="icon"></span><h3>Four Home Options</h3><p>RV 101 · RV 103 · RV 106 · RV 110</p></div><div class="feature"><span class="icon"></span><h3>3D Virtual Tours</h3><p>Explore all four unit models online</p></div></div><section id="floorplans" class="fpSection">
+<main class="main"><div class="introGrid"><section class="intro"><div class="eyebrow">The Community</div><h2>A place designed around connection.</h2><p>Richland Village brings together homes, shared spaces, and neighborhood-scale commercial life with an emphasis on walkability and connection. It is designed to feel welcoming, familiar, and distinctly Auburn.</p></section></div><div class="features"><div class="feature"><span class="icon"></span><h3>Mixed-Use Living</h3><p>Homes, shared space &amp; neighborhood commercial</p></div><div class="feature"><span class="icon"></span><h3>Walkable by Design</h3><p>Everyday connection, close to home</p></div><div class="feature"><span class="icon"></span><h3>Three Floor Plans</h3><p>The Cotswold · The Windsor · The Kensington</p></div><div class="feature"><span class="icon"></span><h3>3D Virtual Tours</h3><p>Explore every floor plan online</p></div></div><section id="floorplans" class="fpSection">
   <p class="fpEye">Richland Village</p>
   <h2 class="fpTitle">Floor Plans</h2>
   <p class="fpSub">Homes available in 2, 3, and 4 bedroom configurations &mdash; each thoughtfully designed for Auburn living.</p>
@@ -100,16 +109,34 @@
     <button class="fpArrow" onclick="fpNav(-1)" aria-label="Previous">&#8249;</button>
     <div class="fpTrack">
       <div class="fpSlide active" data-slide="0">
-        <img src="assets/phase3-floorplan-2br.png" alt="2 Bedroom floor plan"/>
-        <div class="fpLabel">2 Bedroom</div>
+        <a class="fpSlideLink" href="floorplan-cotswold.html">
+          <div class="fpSlideName">The Cotswold</div>
+          <div class="fpSlideSbs">
+            <div class="fpSbsPane"><img src="assets/cotswold-ground.png" alt="Cotswold ground level"/><span class="fpSbsLbl">Ground</span></div>
+            <div class="fpSbsPane"><img src="assets/cotswold-second.png" alt="Cotswold second level"/><span class="fpSbsLbl">Second</span></div>
+          </div>
+          <div class="fpSlideInfo"><span class="fpSlideBeds">2 Bedroom</span><span class="fpSlideViewLnk">View Plan →</span></div>
+        </a>
       </div>
       <div class="fpSlide" data-slide="1">
-        <img src="assets/phase3-floorplan-3br.png" alt="3 Bedroom floor plan"/>
-        <div class="fpLabel">3 Bedroom</div>
+        <a class="fpSlideLink" href="floorplan-windsor.html">
+          <div class="fpSlideName">The Windsor</div>
+          <div class="fpSlideSbs">
+            <div class="fpSbsPane"><img src="assets/windsor-ground.png" alt="Windsor ground level"/><span class="fpSbsLbl">Ground</span></div>
+            <div class="fpSbsPane"><img src="assets/windsor-second.png" alt="Windsor second level"/><span class="fpSbsLbl">Second</span></div>
+          </div>
+          <div class="fpSlideInfo"><span class="fpSlideBeds">3 Bedroom</span><span class="fpSlideViewLnk">View Plan →</span></div>
+        </a>
       </div>
       <div class="fpSlide" data-slide="2">
-        <img src="assets/phase3-floorplan-4br.png" alt="4 Bedroom floor plan"/>
-        <div class="fpLabel">4 Bedroom</div>
+        <a class="fpSlideLink" href="floorplan-kensington.html">
+          <div class="fpSlideName">The Kensington</div>
+          <div class="fpSlideSbs">
+            <div class="fpSbsPane"><img src="assets/kensington-ground.png" alt="Kensington ground level"/><span class="fpSbsLbl">Ground</span></div>
+            <div class="fpSbsPane"><img src="assets/kensington-second.png" alt="Kensington second level"/><span class="fpSbsLbl">Second</span></div>
+          </div>
+          <div class="fpSlideInfo"><span class="fpSlideBeds">4 Bedroom</span><span class="fpSlideViewLnk">View Plan →</span></div>
+        </a>
       </div>
     </div>
     <button class="fpArrow" onclick="fpNav(1)" aria-label="Next">&#8250;</button>
@@ -125,11 +152,11 @@
   function fpGo(n){fpSlides[fpCur].classList.remove('active');fpDots[fpCur].classList.remove('active');fpCur=n;fpSlides[fpCur].classList.add('active');fpDots[fpCur].classList.add('active');}
   function fpNav(d){fpGo((fpCur+d+fpSlides.length)%fpSlides.length);}
   </script>
-</section><div class="sectionBlock"><div class="eyebrow">Commercial Floor Plan</div><h2>Richland Village Commercial.</h2><p>Floor plans for the Richland Village Commercial space are being finalized and will be posted here soon. Contact leasing for early details.</p><div class="floorPlanGrid"><div class="floorPlanCard"><div class="floorPlanPreview"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="36" height="36"></rect><line x1="24" y1="6" x2="24" y2="26"></line><line x1="6" y1="26" x2="42" y2="26"></line><line x1="24" y1="26" x2="24" y2="42"></line></svg></div><div class="floorPlanLabel"><h4>Commercial Space</h4><span class="comingSoonTag">Coming Soon</span><a class="planApplyBtn" href="index.html?interest=Commercial&unit=Richland%20Village%20Commercial#contact">Apply for This Unit</a></div></div></div></div><div class="gallery three"><img src="assets/phase3-exterior-detail.jpg" alt="Richland Village exterior detail"><img src="assets/phase3-2br-exterior.jpg" alt="Richland Village 2 bedroom exterior"><img src="assets/phase3-3br-exterior.jpg" alt="Richland Village 3 bedroom exterior"></div><div class="sectionBlock"><div class="eyebrow">Interior Photos</div><h2>Inside Richland Village.</h2><p>Interiors from the 2, 3, and 4 bedroom homes.</p>
+</section><div class="sectionBlock"><div class="eyebrow">Commercial Floor Plan</div><h2>Richland Village Commercial.</h2><p>Floor plans for the Richland Village Commercial space are being finalized and will be posted here soon. Contact leasing for early details.</p><div class="floorPlanGrid"><div class="floorPlanCard"><div class="floorPlanPreview"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="36" height="36"></rect><line x1="24" y1="6" x2="24" y2="26"></line><line x1="6" y1="26" x2="42" y2="26"></line><line x1="24" y1="26" x2="24" y2="42"></line></svg></div><div class="floorPlanLabel"><h4>Commercial Space</h4><span class="comingSoonTag">Coming Soon</span><a class="planApplyBtn" href="index.html?interest=Commercial&unit=Richland%20Village%20Commercial#contact">Apply for This Unit</a></div></div></div></div><div class="gallery three"><img src="assets/phase3-exterior-detail.jpg" alt="Richland Village exterior detail"><img src="assets/phase3-2br-exterior.jpg" alt="Richland Village 2 bedroom exterior"><img src="assets/phase3-3br-exterior.jpg" alt="Richland Village 3 bedroom exterior"></div><div class="sectionBlock"><div class="eyebrow">Interior Photos</div><h2>Inside Richland Village.</h2><p>Interiors from The Cotswold, The Windsor, and The Kensington.</p>
 <div class="photoTabsRow">
-<button class="active" data-tab="twobr">2 Bedroom</button>
-<button data-tab="threebr">3 Bedroom</button>
-<button data-tab="fourbr">4 Bedroom</button>
+<button class="active" data-tab="twobr">The Cotswold</button>
+<button data-tab="threebr">The Windsor</button>
+<button data-tab="fourbr">The Kensington</button>
 </div>
 <div class="photoGrid active" data-panel="twobr">
 <img src="assets/phase3-2br-kitchen.jpg" alt="2 bedroom home kitchen"/>
@@ -162,7 +189,7 @@
 <img src="assets/phase3-4br-bedroom4.jpg" alt="4 bedroom home fourth bedroom"/>
 <img src="assets/phase3-4br-bath-tub.jpg" alt="4 bedroom home shared bathroom with tub"/>
 </div>
-</div><div class="sectionBlock" id="tour"><div class="eyebrow">Virtual Tours</div><h2>Step inside Richland Village.</h2><p>Choose a unit model to explore, or open it directly in Matterport.</p><div class="tourTabsRow"><button class="active" data-tour="https://my.matterport.com/show/?m=wo3qGHMzLVR">Unit 1</button><button data-tour="https://my.matterport.com/show/?m=nAha3DLi7LG">Unit 3</button><button data-tour="https://my.matterport.com/show/?m=HB5wVuChnxR">Unit 6</button><button data-tour="https://my.matterport.com/show/?m=wYBsMXMtcgC">Unit 10</button></div><iframe class="tourFrame" id="rvTourFrame" allow="autoplay; fullscreen; web-share; xr-spatial-tracking" allowfullscreen loading="lazy" src="https://my.matterport.com/show/?m=wo3qGHMzLVR"></iframe></div><div class="sectionBlock"><div class="eyebrow">Location</div><h2>538 Richland Road, Auburn, AL</h2><p>Designed around walkability, gathering, and everyday Auburn life.</p><iframe class="mapFrame" loading="lazy" src="https://www.google.com/maps?q=538%20Richland%20Road%2C%20Auburn%2C%20AL&output=embed"></iframe></div><div class="infoBand"><div><strong>Schedule a Tour</strong>We’d love to show you around.</div><div><strong>(334) 750-2059</strong>Call or text to schedule your tour.</div><div><strong>RV 101 · RV 103 · RV 106 · RV 110</strong>leasing@parmerdevelopment.com</div></div></main>
+</div><div class="sectionBlock" id="tour"><div class="eyebrow">Virtual Tours</div><h2>Step inside Richland Village.</h2><p>Choose a unit model to explore, or open it directly in Matterport.</p><div class="tourTabsRow"><button class="active" data-tour="https://my.matterport.com/show/?m=wo3qGHMzLVR">The Cotswold</button><button data-tour="https://my.matterport.com/show/?m=nAha3DLi7LG">The Windsor</button><button data-tour="https://my.matterport.com/show/?m=HB5wVuChnxR">The Kensington</button><button data-tour="https://my.matterport.com/show/?m=wYBsMXMtcgC">The Kensington</button></div><iframe class="tourFrame" id="rvTourFrame" allow="autoplay; fullscreen; web-share; xr-spatial-tracking" allowfullscreen loading="lazy" src="https://my.matterport.com/show/?m=wo3qGHMzLVR"></iframe></div><div class="sectionBlock"><div class="eyebrow">Location</div><h2>538 Richland Road, Auburn, AL</h2><p>Designed around walkability, gathering, and everyday Auburn life.</p><iframe class="mapFrame" loading="lazy" src="https://www.google.com/maps?q=538%20Richland%20Road%2C%20Auburn%2C%20AL&output=embed"></iframe></div><div class="infoBand"><div><strong>Schedule a Tour</strong>We’d love to show you around.</div><div><strong>(334) 750-2059</strong>Call or text to schedule your tour.</div><div><strong>RV 101 · RV 103 · RV 106 · RV 110</strong>leasing@parmerdevelopment.com</div></div></main>
 <div class="ctaBand"><div><h3>Ready to see it in person?</h3><p>We'd love to show you around.</p></div><div class="ctaActions"><a class="btn2 orange" href="tel:+13347502059">Call (334) 750-2059</a><a class="btn2 ghost" href="index.html?interest=Richland%20Village#contact">Apply Now</a></div></div>
 <footer class="footer"><div class="footerGrid"><div><img class="footerLogo" src="assets/parmer-logo-white-master.png" alt="Parmer Development"><p>Auburn, Alabama based real estate development company creating thoughtful communities designed to stand the test of time.</p></div><div class="footerLinks"><h4>Communities</h4><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village Phase III</a></div><div><h4>Contact</h4><a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a><p>(334) 750-2059</p></div></div><div class="footerSocial"><a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div><div class="copyright">© 2026 Parmer Development. All rights reserved.</div></footer><script>document.querySelectorAll('.tourTabsRow button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tourTabsRow button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('rvTourFrame').src=b.dataset.tour;}));</script><script>document.querySelectorAll('.photoTabsRow button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.photoTabsRow button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.photoGrid').forEach(g=>g.classList.toggle('active',g.dataset.panel===b.dataset.tab));}));</script><div class="floatWidget" id="floatWidget">
   <button class="fwToggle open" id="fwToggle" aria-label="Toggle contact panel">
