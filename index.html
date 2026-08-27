@@ -510,7 +510,7 @@ function update(){
 document.querySelectorAll('.locTile').forEach(function(tile){
   tile.addEventListener('click',function(){activateLoc(tile.dataset.loc);});
 });
-document.querySelectorAll('.subFilters [data-filter]').forEach(function(g){
+document.querySelectorAll('.bedFilter [data-filter]').forEach(function(g){
   var key=g.dataset.filter;
   g.querySelectorAll('.fBtn').forEach(function(b){
     b.addEventListener('click',function(){
