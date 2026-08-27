@@ -556,7 +556,7 @@ document.querySelectorAll('.dCardFp').forEach(function(fp){
     var rect = banner.getBoundingClientRect();
     var wh   = window.innerHeight;
     // 0 = banner at bottom of viewport, 1 = banner at top
-    var progress = Math.max(0, Math.min(1, 2 * (1 - rect.top / wh)));
+    var progress = Math.max(0, Math.min(1, (4/3) * (1 - rect.top / wh)));
     var offset = (1 - progress) * 55;
     left.style.transform  = 'translateX(-' + offset + 'vw)';
     right.style.transform = 'translateX('  + offset + 'vw)';
@@ -889,7 +889,7 @@ document.querySelectorAll('.mapChoice').forEach(b=>b.addEventListener('click',()
   var container=document.querySelector('.introPhotos');
   var imgs=container?container.querySelectorAll('img'):[];
   if(!imgs.length)return;
-  var rates=[0.06,0.14,0.24];
+  var rates=[0.24,0.14,0.06];
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in-view');});
   },{threshold:0.1});
