@@ -187,8 +187,8 @@
 /* ─── Discover / Find Section ─── */
 .discoverSection{background:#f7f5f1;padding:70px 0 90px}
 .discoverHead{text-align:center;margin-bottom:32px}
-.discoverMapBox{overflow:hidden;border:1px solid #e8e3da;margin-bottom:0}
-.discoverMapIframe{width:100%;height:400px;border:0;display:block}
+
+
 .locTiles{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border:1px solid #e8e3da;border-top:none;margin-bottom:0}
 .locTile{padding:16px 18px;background:#fff;border:none;border-right:1px solid #e8e3da;cursor:pointer;text-align:left;font-family:inherit;transition:background .15s}
 .locTile:last-child{border-right:none}
@@ -225,9 +225,16 @@
 .dCardLink.ghost{color:#bbb}
 .dCardLink:hover{opacity:.7}
 @media(max-width:1000px){.discoverGrid{grid-template-columns:1fr 1fr}.locTiles{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.discoverGrid{grid-template-columns:1fr}.locTiles{grid-template-columns:1fr 1fr}.discoverMapIframe{height:260px}.subFilters{flex-direction:column;gap:14px}}
+@media(max-width:620px){.discoverGrid{grid-template-columns:1fr}.locTiles{grid-template-columns:1fr 1fr}.subFilters{flex-direction:column;gap:14px}}
+
+#propertyMap{height:420px;width:100%;border:1px solid #e8e3da}
+.pmPin{width:30px;height:30px;background:#d96f20;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 12px rgba(0,0,0,.28);cursor:pointer;transition:transform .18s,background .18s}
+.pmPin:hover{transform:scale(1.18)}
+.pmPinOn{background:#061d2b;transform:scale(1.15)}
+.leaflet-popup-content-wrapper{border-radius:2px;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.leaflet-popup-content{margin:12px 16px;line-height:1.5}
 </style>
-</head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script></head>
 <body>
 <div class="announceBanner">Now Leasing &nbsp;·&nbsp; Fall 2027</div>
 <div class="utilBar" id="utilBar">
@@ -382,9 +389,7 @@
 <p class="lead">Start with a neighborhood, then narrow by price and bedrooms.</p>
 </div>
 
-<div class="discoverMapBox">
-<iframe class="discoverMapIframe" id="discoverMapFrame" loading="lazy" src="https://www.google.com/maps?q=Auburn+University,+Auburn,+AL&output=embed"></iframe>
-</div>
+<div id="propertyMap" class="discoverMapBox"></div>
 
 <div class="locTiles">
 <button class="locTile active" data-loc="all" data-map="https://www.google.com/maps?q=Auburn+University,+Auburn,+AL&output=embed">
@@ -497,40 +502,90 @@
 </div>
 <script>
 (function(){
-var state={loc:'all',price:'all',beds:'all'};
-function update(){
-var cards=document.querySelectorAll('#discoverGrid .discoverCard');
-var n=0;
-cards.forEach(function(c){
-var cs=c.dataset.comingsoon==='true';
-var bl=state.loc==='all'||c.dataset.loc===state.loc;
-var show=cs?bl:(bl&&(state.price==='all'||c.dataset.price===state.price)&&(state.beds==='all'||c.dataset.beds===state.beds));
-c.style.display=show?'':'none';
-if(show)n++;
-});
-var el=document.getElementById('discoverCount');
-if(el)el.textContent=n+' home'+(n!==1?'s':'')+' match your search';
+// ── Leaflet map ──────────────────────────────────────────
+var map = L.map('propertyMap',{zoomControl:true,scrollWheelZoom:false}).setView([32.601,-85.494],13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19
+}).addTo(map);
+
+var props=[
+  {name:'Bragg Brownstones',  loc:'bragg-ave',     lat:32.5987, lng:-85.4822, walk:'~8 min walk',  addr:'152 Bragg Ave'},
+  {name:'Richland Village',   loc:'richland-road',  lat:32.6055, lng:-85.4938, walk:'~18 min walk', addr:'538 Richland Road'},
+  {name:'Judd Ave Cottages',  loc:'judd-ave',       lat:32.5971, lng:-85.4872, walk:'~6 min walk',  addr:'533 Judd Ave'},
+  {name:'Richland Village III',loc:'jordan-pkwy',   lat:32.6003, lng:-85.5082, walk:'~5 min drive', addr:'1256 Shug Jordan Pkwy'}
+];
+
+function makeIcon(active){
+  return L.divIcon({className:'',
+    html:'<div class="pmPin'+(active?' pmPinOn':'')+'"></div>',
+    iconSize:[30,30],iconAnchor:[15,15],popupAnchor:[0,-18]});
 }
-document.querySelectorAll('.locTile').forEach(function(tile){
-tile.addEventListener('click',function(){
-document.querySelectorAll('.locTile').forEach(function(t){t.classList.remove('active');});
-tile.classList.add('active');
-state.loc=tile.dataset.loc;
-var mapFrame=document.getElementById('discoverMapFrame');
-if(mapFrame&&tile.dataset.map)mapFrame.src=tile.dataset.map;
-update();
+
+var markers={};
+props.forEach(function(p){
+  var m=L.marker([p.lat,p.lng],{icon:makeIcon(false)}).addTo(map);
+  m.bindPopup(
+    '<strong style="font-size:13px;color:#061d2b">'+p.name+'</strong>'+
+    '<br><span style="font-size:11px;color:#888">'+p.addr+'</span>'+
+    '<br><span style="font-size:10px;font-weight:700;color:#d96f20;text-transform:uppercase;letter-spacing:.06em">'+p.walk+' to campus</span>',
+    {maxWidth:180,className:'pmPopup'});
+  m.on('click',function(){activateLoc(p.loc);});
+  markers[p.loc]=m;
 });
+
+function flyTo(loc){
+  if(loc==='all'){
+    map.flyTo([32.601,-85.494],13,{duration:0.8});
+    Object.keys(markers).forEach(function(k){markers[k].closePopup();});
+  } else if(markers[loc]){
+    map.flyTo(markers[loc].getLatLng(),16,{duration:0.8});
+    markers[loc].openPopup();
+  }
+  // Update marker styles
+  Object.keys(markers).forEach(function(k){
+    markers[k].setIcon(makeIcon(k===loc));
+  });
+}
+
+// ── Filters ──────────────────────────────────────────────
+var state={loc:'all',price:'all',beds:'all'};
+
+function activateLoc(loc){
+  state.loc=loc;
+  document.querySelectorAll('.locTile').forEach(function(t){t.classList.remove('active');});
+  var tile=document.querySelector('.locTile[data-loc="'+loc+'"]');
+  if(tile)tile.classList.add('active');
+  flyTo(loc);
+  update();
+}
+
+function update(){
+  var cards=document.querySelectorAll('#discoverGrid .discoverCard');
+  var n=0;
+  cards.forEach(function(c){
+    var cs=c.dataset.comingsoon==='true';
+    var bl=state.loc==='all'||c.dataset.loc===state.loc;
+    var show=cs?bl:(bl&&(state.price==='all'||c.dataset.price===state.price)&&(state.beds==='all'||c.dataset.beds===state.beds));
+    c.style.display=show?'':'none';
+    if(show)n++;
+  });
+  var el=document.getElementById('discoverCount');
+  if(el)el.textContent=n+' home'+(n!==1?'s':'')+' match your search';
+}
+
+document.querySelectorAll('.locTile').forEach(function(tile){
+  tile.addEventListener('click',function(){activateLoc(tile.dataset.loc);});
 });
 document.querySelectorAll('.subFilters [data-filter]').forEach(function(g){
-var key=g.dataset.filter;
-g.querySelectorAll('.fBtn').forEach(function(b){
-b.addEventListener('click',function(){
-g.querySelectorAll('.fBtn').forEach(function(x){x.classList.remove('active');});
-b.classList.add('active');
-state[key]=b.dataset.val;
-update();
-});
-});
+  var key=g.dataset.filter;
+  g.querySelectorAll('.fBtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      g.querySelectorAll('.fBtn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      state[key]=b.dataset.val;
+      update();
+    });
+  });
 });
 update();
 })();
