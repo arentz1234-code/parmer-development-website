@@ -195,8 +195,8 @@
 .locTile.active .locTileName{color:#fff}
 .locTileAddr{display:block;font-size:11px;color:#999;margin-bottom:4px}
 .locTile.active .locTileAddr{color:rgba(255,255,255,.55)}
-.locTileWalk{display:block;font-size:10px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.locTile.active .locTileWalk{color:#ff9a4c}
+
+.locTile.active 
 .locTileCount{display:block;font-size:10px;color:#bbb}
 .locTile.active .locTileCount{color:rgba(255,255,255,.4)}
 .subFilters{background:#fff;border:1px solid #e8e3da;border-top:none;padding:16px 24px;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:22px}
@@ -212,7 +212,7 @@
 .dCardCSBadge{position:absolute;top:12px;right:12px;background:rgba(6,29,43,.75);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px}
 .dCardBody{padding:20px 22px 22px}
 .dCardName{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:var(--navy);margin:0 0 4px}
-.dCardWalk{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.07em;margin:0 0 8px}
+
 .dCardMeta{font-size:12px;color:#666;margin:0 0 3px}
 .dCardAddr{font-size:11px;color:#aaa;margin:0 0 14px}
 .dCardPrice{font-size:12px;font-weight:700;color:var(--navy);margin:0 0 14px;padding-top:12px;border-top:1px solid #f0ece5}
@@ -392,25 +392,21 @@
 <button class="locTile" data-loc="judd-ave" data-map="https://www.google.com/maps?q=533%20Judd%20Ave%2C%20Auburn%2C%20AL&output=embed">
 <span class="locTileName">Judd Ave Cottages</span>
 <span class="locTileAddr">533 Judd Ave</span>
-<span class="locTileWalk">~6 min walk to campus</span>
 <span class="locTileCount">3 floor plans</span>
 </button>
 <button class="locTile" data-loc="bragg-ave" data-map="https://www.google.com/maps?q=152%20Bragg%20Ave%2C%20Auburn%2C%20AL&output=embed">
 <span class="locTileName">Bragg Brownstones</span>
 <span class="locTileAddr">152 Bragg Ave</span>
-<span class="locTileWalk">~8 min walk to campus</span>
 <span class="locTileCount">3 floor plans</span>
 </button>
 <button class="locTile" data-loc="richland-road" data-map="https://www.google.com/maps?q=538%20Richland%20Road%2C%20Auburn%2C%20AL&output=embed">
 <span class="locTileName">Richland Village</span>
 <span class="locTileAddr">538 Richland Road</span>
-<span class="locTileWalk">~18 min walk to campus</span>
 <span class="locTileCount">3 floor plans</span>
 </button>
 <button class="locTile" data-loc="jordan-pkwy" data-map="https://www.google.com/maps?q=1256%20Shug%20Jordan%20Parkway%2C%20Auburn%2C%20AL&output=embed">
 <span class="locTileName">Richland Village III</span>
 <span class="locTileAddr">1256 Shug Jordan Pkwy</span>
-<span class="locTileWalk">~22 min walk to campus</span>
 <span class="locTileCount">Coming Fall 2027</span>
 </button>
 </div>
@@ -443,52 +439,52 @@
 
 <div class="discoverCard" data-loc="richland-road" data-beds="2" data-price="under-2000">
 <div class="dCardImg"><img src="assets/richland-hero.jpg" alt="The Cotswold"/><span class="dCardBadge">Richland Village</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Cotswold</h3><p class="dCardWalk">~18 min walk to campus</p><p class="dCardMeta">2 BD &nbsp;&middot;&nbsp; 2.5 BA &nbsp;&middot;&nbsp; ~1,400 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-cotswold.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Cotswold</h3><p class="dCardMeta">2 BD &nbsp;&middot;&nbsp; 2.5 BA &nbsp;&middot;&nbsp; ~1,400 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-cotswold.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="richland-road" data-beds="3" data-price="2000-3000">
 <div class="dCardImg"><img src="assets/phase3-3br-exterior.jpg" alt="The Windsor"/><span class="dCardBadge">Richland Village</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Windsor</h3><p class="dCardWalk">~18 min walk to campus</p><p class="dCardMeta">3 BD &nbsp;&middot;&nbsp; 3 BA &nbsp;&middot;&nbsp; ~1,600 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-windsor.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Windsor</h3><p class="dCardMeta">3 BD &nbsp;&middot;&nbsp; 3 BA &nbsp;&middot;&nbsp; ~1,600 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-windsor.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="richland-road" data-beds="4" data-price="2000-3000">
 <div class="dCardImg"><img src="assets/phase3-4br-living.jpg" alt="The Kensington"/><span class="dCardBadge">Richland Village</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Kensington</h3><p class="dCardWalk">~18 min walk to campus</p><p class="dCardMeta">4 BD &nbsp;&middot;&nbsp; 4 BA &nbsp;&middot;&nbsp; ~1,700 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-kensington.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Kensington</h3><p class="dCardMeta">4 BD &nbsp;&middot;&nbsp; 4 BA &nbsp;&middot;&nbsp; ~1,700 sq ft</p><p class="dCardAddr">538 Richland Road &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-kensington.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="richland-village.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="bragg-ave" data-beds="5" data-price="3000-plus">
 <div class="dCardImg"><img src="assets/bragg-hero.jpg" alt="The Ashford"/><span class="dCardBadge">Bragg Brownstones</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Ashford</h3><p class="dCardWalk">~8 min walk to campus</p><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-ashford.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Ashford</h3><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-ashford.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="bragg-ave" data-beds="5" data-price="3000-plus">
 <div class="dCardImg"><img src="assets/bragg-main-new.jpeg" alt="The Pemberton"/><span class="dCardBadge">Bragg Brownstones</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Pemberton</h3><p class="dCardWalk">~8 min walk to campus</p><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-pemberton.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Pemberton</h3><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-pemberton.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="bragg-ave" data-beds="5" data-price="3000-plus">
 <div class="dCardImg"><img src="assets/bragg-gallery-2.jpg" alt="The Balmoral"/><span class="dCardBadge">Bragg Brownstones</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Balmoral</h3><p class="dCardWalk">~8 min walk to campus</p><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-balmoral.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Balmoral</h3><p class="dCardMeta">5 BD &nbsp;&middot;&nbsp; 5.5 BA &nbsp;&middot;&nbsp; 2,772 sq ft</p><p class="dCardAddr">152 Bragg Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="floorplan-balmoral.html">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="bragg-brownstones.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="judd-ave" data-beds="2" data-price="under-2000">
 <div class="dCardImg"><img src="assets/judd-main.jpeg" alt="The Fairytale"/><span class="dCardBadge">Judd Ave Cottages</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Fairytale</h3><p class="dCardWalk">~6 min walk to campus</p><p class="dCardMeta">2 BD &nbsp;&middot;&nbsp; 2 BA &nbsp;&middot;&nbsp; ~1,250 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Fairytale</h3><p class="dCardMeta">2 BD &nbsp;&middot;&nbsp; 2 BA &nbsp;&middot;&nbsp; ~1,250 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="judd-ave" data-beds="3" data-price="under-2000">
 <div class="dCardImg"><img src="assets/judd-kitchen.png" alt="The Modern"/><span class="dCardBadge">Judd Ave Cottages</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Modern</h3><p class="dCardWalk">~6 min walk to campus</p><p class="dCardMeta">3 BD &nbsp;&middot;&nbsp; 2 BA &nbsp;&middot;&nbsp; ~1,600 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Modern</h3><p class="dCardMeta">3 BD &nbsp;&middot;&nbsp; 2 BA &nbsp;&middot;&nbsp; ~1,600 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard" data-loc="judd-ave" data-beds="4" data-price="2000-3000">
 <div class="dCardImg"><img src="assets/judd-bedroom.png" alt="The Woodsy"/><span class="dCardBadge">Judd Ave Cottages</span></div>
-<div class="dCardBody"><h3 class="dCardName">The Woodsy</h3><p class="dCardWalk">~6 min walk to campus</p><p class="dCardMeta">4 BD &nbsp;&middot;&nbsp; 3 BA &nbsp;&middot;&nbsp; ~2,055 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">The Woodsy</h3><p class="dCardMeta">4 BD &nbsp;&middot;&nbsp; 3 BA &nbsp;&middot;&nbsp; ~2,055 sq ft</p><p class="dCardAddr">533 Judd Ave &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice">Contact for Pricing</p><div class="dCardLinks"><a class="dCardLink" href="judd-cottages.html#floorplans">View Floor Plan &rsaquo;</a><a class="dCardLink ghost" href="judd-cottages.html">Community &rsaquo;</a></div></div>
 </div>
 
 <div class="discoverCard dCardCS" data-loc="jordan-pkwy" data-comingsoon="true">
 <div class="dCardImg"><img src="assets/phase3-hero.jpg" alt="Richland Village III"/><span class="dCardBadge">Richland Village III</span><span class="dCardCSBadge">Fall 2027</span></div>
-<div class="dCardBody"><h3 class="dCardName">Richland Village III</h3><p class="dCardWalk">~5 min drive to campus</p><p class="dCardMeta">8 Townhomes + 3 Cottages &nbsp;&middot;&nbsp; 1,194&ndash;1,721 sq ft</p><p class="dCardAddr">1256 Shug Jordan Pkwy &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice dCardPriceCS">Now Leasing &middot; Fall 2027</p><div class="dCardLinks"><a class="dCardLink" href="richland-village-phase-3.html">Learn More &rsaquo;</a></div></div>
+<div class="dCardBody"><h3 class="dCardName">Richland Village III</h3><p class="dCardMeta">8 Townhomes + 3 Cottages &nbsp;&middot;&nbsp; 1,194&ndash;1,721 sq ft</p><p class="dCardAddr">1256 Shug Jordan Pkwy &nbsp;&middot;&nbsp; Auburn, AL</p><p class="dCardPrice dCardPriceCS">Now Leasing &middot; Fall 2027</p><div class="dCardLinks"><a class="dCardLink" href="richland-village-phase-3.html">Learn More &rsaquo;</a></div></div>
 </div>
 
 </div>
@@ -502,10 +498,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 }).addTo(map);
 
 var props=[
-  {name:'Bragg Brownstones',  loc:'bragg-ave',     lat:32.6112, lng:-85.4840, walk:'~8 min walk',  addr:'152 Bragg Ave'},
-  {name:'Richland Village',   loc:'richland-road',  lat:32.6138, lng:-85.5074, walk:'~22 min walk', addr:'538 Richland Road'},
-  {name:'Judd Ave Cottages',  loc:'judd-ave',       lat:32.6147, lng:-85.5065, walk:'~20 min walk', addr:'533 Judd Ave'},
-  {name:'Richland Village III',loc:'jordan-pkwy',   lat:32.6151, lng:-85.5073, walk:'~22 min walk', addr:'1256 Shug Jordan Pkwy'}
+  {name:'Bragg Brownstones',  loc:'bragg-ave',     lat:32.6112, lng:-85.4840,  addr:'152 Bragg Ave'},
+  {name:'Richland Village',   loc:'richland-road',  lat:32.6138, lng:-85.5074, addr:'538 Richland Road'},
+  {name:'Judd Ave Cottages',  loc:'judd-ave',       lat:32.6147, lng:-85.5065, addr:'533 Judd Ave'},
+  {name:'Richland Village III',loc:'jordan-pkwy',   lat:32.6151, lng:-85.5073, addr:'1256 Shug Jordan Pkwy'}
 ];
 
 function makeIcon(active){
@@ -520,7 +516,7 @@ props.forEach(function(p){
   m.bindPopup(
     '<strong style="font-size:13px;color:#061d2b">'+p.name+'</strong>'+
     '<br><span style="font-size:11px;color:#888">'+p.addr+'</span>'+
-    '<br><span style="font-size:10px;font-weight:700;color:#d96f20;text-transform:uppercase;letter-spacing:.06em">'+p.walk+' to campus</span>',
+    ,
     {maxWidth:180,className:'pmPopup'});
   m.on('click',function(){activateLoc(p.loc);});
   markers[p.loc]=m;
