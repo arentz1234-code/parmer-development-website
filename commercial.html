@@ -1342,41 +1342,43 @@
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
-  var map = L.map('commMap', {scrollWheelZoom: false}).setView([32.6112, -85.4836], 17);
+  // Centered at midpoint of the Sanders St & Bragg Ave parcel
+  var map = L.map('commMap', {scrollWheelZoom: false}).setView([32.6109, -85.4843], 17);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
     maxZoom: 19
   }).addTo(map);
 
-  // Property pins
+  // Property pins — 152 & 160 Bragg Ave along south (Bragg) frontage
   var pinSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 36 48"><path d="M18 0C8.059 0 0 8.059 0 18c0 12.623 18 30 18 30S36 30.623 36 18C36 8.059 27.941 0 18 0z" fill="#d96f20" stroke="#fff" stroke-width="2.5"/><circle cx="18" cy="18" r="7" fill="#fff"/></svg>';
   var icon = L.divIcon({className:'', html: pinSvg, iconSize:[36,48], iconAnchor:[18,48], popupAnchor:[0,-50]});
-  L.marker([32.6112, -85.4840], {icon: icon})
+  L.marker([32.6107, -85.4845], {icon: icon})
     .addTo(map)
-    .bindPopup('<strong>152 Bragg Ave</strong><br/>Commercial Space<br/><em>~9,500 VPD</em>');
-  L.marker([32.6112, -85.4833], {icon: icon})
-    .addTo(map)
-    .bindPopup('<strong>160 Bragg Ave</strong><br/>Commercial Space<br/><em>~9,500 VPD</em>')
+    .bindPopup('<strong>152 Bragg Ave</strong><br/>Commercial Space — NE corner of Sanders &amp; Bragg<br/><em>~9,500 VPD</em>')
     .openPopup();
+  L.marker([32.6107, -85.4841], {icon: icon})
+    .addTo(map)
+    .bindPopup('<strong>160 Bragg Ave</strong><br/>Commercial Space<br/><em>~9,500 VPD</em>');
 
-  // Combined lot outline covering 152 & 160 Bragg Ave
+  // Accurate parcel outline — 181 ft along Bragg (E-W), 202 ft along Sanders (N-S)
+  // SW corner = intersection of Sanders St & Bragg Ave
   var lotCoords = [
-    [32.6114, -85.4843],
-    [32.6114, -85.4830],
-    [32.6110, -85.4830],
-    [32.6110, -85.4843]
+    [32.6107, -85.4847],  // SW — Sanders & Bragg corner
+    [32.6107, -85.4841],  // SE — east edge along Bragg
+    [32.6113, -85.4841],  // NE
+    [32.6113, -85.4847]   // NW — north edge along Sanders
   ];
   L.polygon(lotCoords, {color:'#d96f20', weight:2.5, fillColor:'#d96f20', fillOpacity:0.15}).addTo(map);
 
-  // Traffic annotation
+  // Traffic annotation on Bragg Ave
   var trafficIcon = L.divIcon({
     className: '',
     html: '<div style="background:#061d2b;color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:5px 9px;white-space:nowrap;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.3)">~9,500 VPD</div>',
     iconAnchor: [40, 14]
   });
-  L.marker([32.6112, -85.4832], {icon: trafficIcon}).addTo(map);
+  L.marker([32.6106, -85.4838], {icon: trafficIcon}).addTo(map);
 
-  // Nearby landmarks
+  // Street labels
   var dotIcon = function(label) {
     return L.divIcon({
       className: '',
@@ -1384,6 +1386,8 @@
       iconAnchor: [6, 4]
     });
   };
+  L.marker([32.6110, -85.4850], {icon: dotIcon("Sanders St")}).addTo(map);
+  L.marker([32.6104, -85.4843], {icon: dotIcon("Bragg Ave")}).addTo(map);
   L.marker([32.6065, -85.4808], {icon: dotIcon("Toomer's Corner")}).addTo(map);
   L.marker([32.6085, -85.4820], {icon: dotIcon("Downtown Auburn")}).addTo(map);
 })();
