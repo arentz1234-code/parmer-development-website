@@ -768,11 +768,11 @@
       .footerRight { text-align: left; }
       .footerSocial { justify-content: flex-start; }
     }
-    .propTabs{background:#f7f5f1;border-bottom:2px solid #d9dde1}
-    .propTabInner{max-width:1100px;margin:0 auto;padding:0 5.5%;display:flex;gap:0}
-    .propTab{padding:18px 32px;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2a3a47;cursor:pointer;transition:.15s;font-family:inherit}
-    .propTab.active{color:#d96f20;border-bottom-color:#d96f20;border-bottom-width:3px}
-    .propTab:hover{color:#d96f20}
+    .propTabs{background:#fff;border-bottom:2px solid #e0dbd2;padding:16px 0}
+    .propTabInner{max-width:1100px;margin:0 auto;padding:0 5.5%;display:flex;gap:12px}
+    .propTab{padding:14px 28px;background:#f0ece5;border:2px solid #d9d4ca;border-radius:2px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2a3a47;cursor:pointer;transition:.15s;font-family:inherit}
+    .propTab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .propTab:hover:not(.active){border-color:#b5ae9e;background:#e8e2d9}
     .commPhotoStrip{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;max-width:1100px;margin:0 auto;padding:0 5.5% 0}
     .commPhotoStrip img{width:100%;height:280px;object-fit:cover;display:block}
     @media(max-width:860px){.commPhotoStrip{grid-template-columns:1fr 1fr}}
