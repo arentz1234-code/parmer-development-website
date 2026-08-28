@@ -15,19 +15,12 @@
 .fpSlide{flex:1;min-width:0;text-align:center}
 .fpSlide img{width:100%;max-width:260px;height:auto;display:block;margin:0 auto 14px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.1))}
 .fpLabel{font-size:14px;font-weight:700;color:var(--navy);letter-spacing:.02em}
-.fpDots{display:none;gap:8px;justify-content:center;margin-top:18px}
+.fpSlide{display:none!important}.fpSlide.active{display:block!important}
+.fpDots{display:flex;gap:8px;justify-content:center;margin-top:18px}
 .fpDot{width:8px;height:8px;border-radius:50%;background:#d3cfc8;cursor:pointer;transition:background .2s}
 .fpDot.active{background:var(--orange)}
 .fpCta{display:inline-block;margin-top:44px;padding:15px 40px;border:1.5px solid var(--orange);color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .fpCta:hover{background:var(--orange);color:#fff}
-@media(max-width:680px){
-  .fpSlide{display:none}.fpSlide.active{display:block}
-  .fpDots{display:flex}
-  .fpTrack{flex:1}
-}
-@media(min-width:681px){
-  .fpSlide{display:block!important}
-}
 .navSocial{display:flex;gap:10px;align-items:center;margin-left:6px}.navSocial a{color:#fff;opacity:.75;display:flex;align-items:center;line-height:1;transition:opacity .2s}.navSocial a:hover{opacity:1}.footerSocial{display:flex;gap:14px;margin-top:14px}.footerSocial a{color:#fff;opacity:.65;display:flex;align-items:center;line-height:1;transition:opacity .2s}.footerSocial a:hover{opacity:1}.fpDisclaimer{font-size:11px;color:#9aa3ab;text-align:center;margin:8px 0 0;font-style:italic;letter-spacing:.02em}
 .fpSideBySide{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 auto;max-width:100%}
 .fpSbsItem{text-align:center}
@@ -140,7 +133,7 @@
   function fpGo(n){fpSlides[fpCur].classList.remove('active');fpDots[fpCur].classList.remove('active');fpCur=n;fpSlides[fpCur].classList.add('active');fpDots[fpCur].classList.add('active');}
   function fpNav(d){fpGo((fpCur+d+fpSlides.length)%fpSlides.length);}
   </script>
-</section><div class="sectionBlock"><div class="eyebrow">Cottage Floor Plan</div><h2>The Cottages.</h2><p>The floor plan for the Richland Village III cottages is being finalized and will be posted here soon. Contact leasing for early details.</p><div class="floorPlanGrid"><div class="floorPlanCard"><div class="floorPlanPreview"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="36" height="36"></rect><line x1="24" y1="6" x2="24" y2="26"></line><line x1="6" y1="26" x2="42" y2="26"></line><line x1="24" y1="26" x2="24" y2="42"></line></svg></div><div class="floorPlanLabel"><h4>Cottage Plan</h4><span class="comingSoonTag">Coming Soon</span><a class="planApplyBtn" href="index.html?interest=Richland%20Village%20Phase%203&unit=Cottage%20Plan#contact">Apply for This Unit</a></div></div></div></div><div class="sectionBlock"><div class="eyebrow">Photos</div><h2>See It for Yourself.</h2><p>Real photos from the 2, 3, and 4 bedroom townhomes.</p>
+</section><div class="sectionBlock"><div class="eyebrow">Photos</div><h2>See It for Yourself.</h2><p>Real photos from the 2, 3, and 4 bedroom townhomes.</p>
 <div class="photoTabsRow">
 <button class="active" data-tab="exterior">Exterior</button>
 <button data-tab="twobr">2 Bedroom</button>
