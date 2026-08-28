@@ -125,12 +125,17 @@
     .hero {
       position: relative;
       min-height: 100vh;
-      background-image: url('assets/commercial-rendering.jpg');
-      background-size: cover;
-      background-position: center 30%;
       display: flex;
       align-items: flex-end;
     }
+    .heroBg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .heroBg1 { background-image: url('assets/commercial-rendering.jpg'); background-position: center 30%; }
+    .heroBg2 { background-image: url('assets/richland-rendering.png'); background-position: center center; opacity: 0; }
     .heroOverlay {
       position: absolute;
       inset: 0;
@@ -905,6 +910,8 @@
 
   <!-- ─── Hero ─── -->
   <section class="hero">
+    <div class="heroBg heroBg1"></div>
+    <div class="heroBg heroBg2"></div>
     <div class="heroOverlay"></div>
     <div class="heroCopy">
       <p class="heroEyebrow">Commercial Spaces</p>
@@ -916,6 +923,18 @@
       </div>
     </div>
   </section>
+  <script>
+  (function(){
+    var bg1=document.querySelector('.heroBg1');
+    var bg2=document.querySelector('.heroBg2');
+    var show2=false;
+    setInterval(function(){
+      show2=!show2;
+      bg1.style.opacity=show2?'0':'1';
+      bg2.style.opacity=show2?'1':'0';
+    },5000);
+  })();
+  </script>
 
   <!-- ─── Breadcrumb ─── -->
   <div class="crumbs">
