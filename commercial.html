@@ -1059,7 +1059,7 @@
     <div class="siteMapInner">
       <div class="siteMapText">
         <p class="eyebrow" style="color:var(--orange)">Site &amp; Traffic</p>
-        <h2>152 Bragg Avenue, Auburn AL</h2>
+        <h2>152 &amp; 160 Bragg Avenue, Auburn AL</h2>
         <p>Located in the heart of Uptown Auburn — one block from N. College Street and within walking distance of Toomer's Corner and Auburn University's campus edge. Bragg Avenue carries an estimated 9,500 vehicles per day with significant pedestrian and bicycle traffic from campus and downtown.</p>
         <ul class="siteMapList">
           <li><strong>~9,500 VPD</strong> — Bragg Ave corridor (ALDOT est.)</li>
@@ -1072,7 +1072,7 @@
       </div>
       <div class="siteMapFrame">
         <div id="commMap"></div>
-        <p class="mapCaption">Interactive map · 152 Bragg Ave, Auburn AL 36830</p>
+        <p class="mapCaption">Interactive map · 152 &amp; 160 Bragg Ave, Auburn AL 36830</p>
       </div>
     </div>
   </div>
@@ -1192,7 +1192,7 @@
     <div class="locationInner">
       <div class="locationText">
         <p class="eyebrow">Location</p>
-        <h2>152 Bragg Ave, Auburn, AL</h2>
+        <h2>152 &amp; 160 Bragg Ave, Auburn, AL</h2>
         <p>Set within walking distance of downtown Auburn, Toomer&rsquo;s Corner, and the everyday energy of campus life. Bragg Avenue is one of the most naturally trafficked streets in uptown Auburn.</p>
         <ul class="locationList">
           <li>Steps from Toomer&rsquo;s Corner and Auburn&rsquo;s central campus gateway</li>
@@ -1207,8 +1207,8 @@
         <iframe
           class="mapFrame"
           loading="lazy"
-          title="152 Bragg Ave, Auburn, AL"
-          src="https://www.google.com/maps?q=152%20Bragg%20Ave%2C%20Auburn%2C%20AL&output=embed">
+          title="152 & 160 Bragg Ave, Auburn, AL"
+          src="https://www.google.com/maps?q=152-160+Bragg+Ave,+Auburn,+AL&output=embed">
         </iframe>
       </div>
     </div>
@@ -1255,12 +1255,13 @@
         <p>2026 Delivery &nbsp;&middot;&nbsp; Ground-Floor Retail</p>
         <a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a>
         <div class="footerSocial">
-          <a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram">
+          <a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram" style="display:flex;align-items:center;gap:0">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
+            <span style="margin-left:8px;font-size:13px;font-weight:600;letter-spacing:.02em">@parmer_development</span>
           </a>
         </div>
       </div>
@@ -1367,25 +1368,28 @@
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
-  var map = L.map('commMap', {scrollWheelZoom: false}).setView([32.6112, -85.4840], 16);
+  var map = L.map('commMap', {scrollWheelZoom: false}).setView([32.6112, -85.4836], 17);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
     maxZoom: 19
   }).addTo(map);
 
-  // Property pin
+  // Property pins
   var pinSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 36 48"><path d="M18 0C8.059 0 0 8.059 0 18c0 12.623 18 30 18 30S36 30.623 36 18C36 8.059 27.941 0 18 0z" fill="#d96f20" stroke="#fff" stroke-width="2.5"/><circle cx="18" cy="18" r="7" fill="#fff"/></svg>';
   var icon = L.divIcon({className:'', html: pinSvg, iconSize:[36,48], iconAnchor:[18,48], popupAnchor:[0,-50]});
   L.marker([32.6112, -85.4840], {icon: icon})
     .addTo(map)
-    .bindPopup('<strong>152 Bragg Ave</strong><br/>Commercial Space — 3 Floors<br/><em>~9,500 VPD</em>')
+    .bindPopup('<strong>152 Bragg Ave</strong><br/>Commercial Space<br/><em>~9,500 VPD</em>');
+  L.marker([32.6112, -85.4833], {icon: icon})
+    .addTo(map)
+    .bindPopup('<strong>160 Bragg Ave</strong><br/>Commercial Space<br/><em>~9,500 VPD</em>')
     .openPopup();
 
-  // Approximate lot outline (roughly 50x120 ft parcel)
+  // Combined lot outline covering 152 & 160 Bragg Ave
   var lotCoords = [
     [32.6114, -85.4843],
-    [32.6114, -85.4837],
-    [32.6110, -85.4837],
+    [32.6114, -85.4830],
+    [32.6110, -85.4830],
     [32.6110, -85.4843]
   ];
   L.polygon(lotCoords, {color:'#d96f20', weight:2.5, fillColor:'#d96f20', fillOpacity:0.15}).addTo(map);
