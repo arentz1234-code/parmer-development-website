@@ -1352,20 +1352,11 @@
   // Single pin at 160 Bragg Ave — corner of Bragg & Sanders
   var pinSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 36 48"><path d="M18 0C8.059 0 0 8.059 0 18c0 12.623 18 30 18 30S36 30.623 36 18C36 8.059 27.941 0 18 0z" fill="#d96f20" stroke="#fff" stroke-width="2.5"/><circle cx="18" cy="18" r="7" fill="#fff"/></svg>';
   var icon = L.divIcon({className:'', html: pinSvg, iconSize:[36,48], iconAnchor:[18,48], popupAnchor:[0,-50]});
-  L.marker([32.6107, -85.4847], {icon: icon})
+  L.marker([32.6110, -85.4844], {icon: icon})
     .addTo(map)
-    .bindPopup('<strong>160 Bragg Ave</strong><br/>Corner of Bragg &amp; Sanders<br/><em>~9,500 VPD</em>')
+    .bindPopup('<strong>160 Bragg Ave</strong><br/>Auburn, AL<br/><em>~9,500 VPD</em>')
     .openPopup();
 
-  // Accurate parcel outline — 181 ft along Bragg (E-W), 202 ft along Sanders (N-S)
-  // SW corner = intersection of Sanders St & Bragg Ave
-  var lotCoords = [
-    [32.6107, -85.4847],  // SW — Sanders & Bragg corner
-    [32.6107, -85.4841],  // SE — east edge along Bragg
-    [32.6113, -85.4841],  // NE
-    [32.6113, -85.4847]   // NW — north edge along Sanders
-  ];
-  L.polygon(lotCoords, {color:'#d96f20', weight:2.5, fillColor:'#d96f20', fillOpacity:0.15}).addTo(map);
 
   // Traffic annotation on Bragg Ave
   var trafficIcon = L.divIcon({
