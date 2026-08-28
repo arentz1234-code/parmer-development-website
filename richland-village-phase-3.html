@@ -28,7 +28,11 @@
 @media(min-width:681px){
   .fpSlide{display:block!important}
 }
-.navSocial{display:flex;gap:10px;align-items:center;margin-left:6px}.navSocial a{color:#fff;opacity:.75;display:flex;align-items:center;line-height:1;transition:opacity .2s}.navSocial a:hover{opacity:1}.footerSocial{display:flex;gap:14px;margin-top:14px}.footerSocial a{color:#fff;opacity:.65;display:flex;align-items:center;line-height:1;transition:opacity .2s}.footerSocial a:hover{opacity:1}.fpDisclaimer{font-size:11px;color:#9aa3ab;text-align:center;margin:8px 0 0;font-style:italic;letter-spacing:.02em}</style><style>
+.navSocial{display:flex;gap:10px;align-items:center;margin-left:6px}.navSocial a{color:#fff;opacity:.75;display:flex;align-items:center;line-height:1;transition:opacity .2s}.navSocial a:hover{opacity:1}.footerSocial{display:flex;gap:14px;margin-top:14px}.footerSocial a{color:#fff;opacity:.65;display:flex;align-items:center;line-height:1;transition:opacity .2s}.footerSocial a:hover{opacity:1}.fpDisclaimer{font-size:11px;color:#9aa3ab;text-align:center;margin:8px 0 0;font-style:italic;letter-spacing:.02em}
+.fpSideBySide{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 auto;max-width:100%}
+.fpSbsItem{text-align:center}
+.fpSbsItem img{width:100%;height:auto;display:block}
+.fpSbsItemLabel{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a97a2;margin-top:6px}</style><style>
 /* Mobile widget — start closed */
 @media(max-width:800px){
   .floatWidgetPanel{opacity:0!important;pointer-events:none!important;transform:scale(.93) translateY(10px)!important}
@@ -98,7 +102,7 @@
 <div class="announceBanner">Now Leasing &nbsp;·&nbsp; Fall 2027</div>
 <section class="hero" style="background-image:url('assets/phase3-hero.jpg')"><header class="siteHeader"><a class="brand" href="index.html"><img src="assets/parmer-logo-white-master.png" alt="Parmer Development"></a><nav class="nav"><a href="about-parmer.html">Our Story</a><a href="commercial.html">Commercial</a><div class="navDrop"><a href="index.html#portfolio">Communities ▾</a><div class="dropMenu"><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village III</a></div></div><div class="navDrop"><a href="richland-village.html#tour">Virtual Tours ▾</a><div class="dropMenu"><a href="richland-village.html#tour">Richland Village</a><a href="judd-cottages.html#tour">Judd Avenue Cottages</a></div></div><button class="apply" data-open-modal="" style="cursor:pointer;font-family:inherit">Apply</button><span class="navSocial"><a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></span></nav><button class="menuBtn" id="menuBtn" aria-label="Open menu">&#9776;</button></header><div class="heroCopy"><h1>Richland Village III</h1><p>A distinct new chapter within the Richland Village story.</p></div></section>
 <div class="crumbs"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="index.html#portfolio">Communities</a> &nbsp;›&nbsp; Richland Village III</div>
-<main class="main"><div class="introGrid"><section class="intro"><div class="eyebrow">The Community</div><h2>The next chapter of Richland Village.</h2><p>Richland Village III extends the character, walkability, and thoughtful placemaking of Richland Village with a new collection of residences and spaces designed to strengthen the broader neighborhood.</p></section></div><div class="features"><div class="feature"><span class="icon"></span><h3>Next Chapter</h3><p>A new collection within Richland Village</p></div><div class="feature"><span class="icon"></span><h3>Same Character</h3><p>Walkability &amp; thoughtful placemaking continue</p></div><div class="feature"><span class="icon"></span><h3>Shug Jordan Parkway</h3><p>1256 Shug Jordan Parkway, Auburn</p></div><div class="feature"><span class="icon"></span><h3>New Residences</h3><p>Strengthening the broader neighborhood</p></div></div><section id="floorplans" class="fpSection">
+<main class="main"><section id="floorplans" class="fpSection">
   <p class="fpEye">Richland Village III</p>
   <h2 class="fpTitle">Floor Plans</h2>
   <p class="fpSub">Townhomes available in 2, 3, and 4 bedroom configurations   each thoughtfully designed for Auburn living.</p>
@@ -106,16 +110,20 @@
     <button class="fpArrow" id="fpPrev" onclick="fpNav(-1)" aria-label="Previous">&#8249;</button>
     <div class="fpTrack">
       <div class="fpSlide active" data-slide="0">
-        <img src="assets/rv3-floorplan-2br.jpg" alt="2 Bedroom Townhome floor plan"/>
-        <div class="fpLabel">2 Bedroom Townhome</div><p class="fpDisclaimer">For illustration purposes only.</p>
+        <div class="fpSideBySide"><div class="fpSbsItem"><img src="assets/rv3-2br-ground.jpg" alt="2 Bedroom ground floor plan"/><div class="fpSbsItemLabel">Ground Floor</div></div><div class="fpSbsItem"><img src="assets/rv3-2br-second.jpg" alt="2 Bedroom second floor plan"/><div class="fpSbsItemLabel">Second Floor</div></div></div>
+        <div class="fpLabel">2 BD · 2.5 BA · 1,200 sq ft</div><p class="fpDisclaimer">For illustration purposes only.</p>
       </div>
       <div class="fpSlide" data-slide="1">
-        <img src="assets/rv3-floorplan-4br-35bath.jpg" alt="4 Bedroom Townhome floor plan"/>
-        <div class="fpLabel">4 Bedroom Townhome</div><p class="fpDisclaimer">For illustration purposes only.</p>
+        <div class="fpSideBySide"><div class="fpSbsItem"><img src="assets/rv3-3br-ground.jpg" alt="3 Bedroom ground floor plan"/><div class="fpSbsItemLabel">Ground Floor</div></div><div class="fpSbsItem"><img src="assets/rv3-3br-second.jpg" alt="3 Bedroom second floor plan"/><div class="fpSbsItemLabel">Second Floor</div></div></div>
+        <div class="fpLabel">3 BD · 3.5 BA · 1,465 sq ft</div><p class="fpDisclaimer">For illustration purposes only.</p>
       </div>
       <div class="fpSlide" data-slide="2">
-        <img src="assets/phase3-floorplan-4br.png" alt="4 Bedroom Townhome floor plan"/>
-        <div class="fpLabel">4 Bedroom Townhome</div><p class="fpDisclaimer">For illustration purposes only.</p>
+        <div class="fpSideBySide"><div class="fpSbsItem"><img src="assets/rv3-4br-35bath-ground.jpg" alt="4 Bedroom 3.5 bath ground floor plan"/><div class="fpSbsItemLabel">Ground Floor</div></div><div class="fpSbsItem"><img src="assets/rv3-4br-35bath-second.jpg" alt="4 Bedroom 3.5 bath second floor plan"/><div class="fpSbsItemLabel">Second Floor</div></div></div>
+        <div class="fpLabel">4 BD · 3.5 BA · 1,772 sq ft</div><p class="fpDisclaimer">For illustration purposes only.</p>
+      </div>
+      <div class="fpSlide" data-slide="3">
+        <div style="width:100%;aspect-ratio:2/1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f0ece5;gap:10px"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b5ae9e" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#b5ae9e">Floor Plan Coming Soon</span></div>
+        <div class="fpLabel">4 BD · 4 BA</div><p class="fpDisclaimer">For illustration purposes only.</p>
       </div>
     </div>
     <button class="fpArrow" id="fpNext" onclick="fpNav(1)" aria-label="Next">&#8250;</button>
@@ -124,6 +132,7 @@
     <span class="fpDot active" onclick="fpGo(0)"></span>
     <span class="fpDot" onclick="fpGo(1)"></span>
     <span class="fpDot" onclick="fpGo(2)"></span>
+    <span class="fpDot" onclick="fpGo(3)"></span>
   </div>
   <button class="fpCta" data-open-modal="" style="cursor:pointer;font-family:inherit">Apply Now</button>
   <script>
