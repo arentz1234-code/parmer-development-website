@@ -1349,16 +1349,13 @@
     maxZoom: 19
   }).addTo(map);
 
-  // Property pins — 152 & 160 Bragg Ave along south (Bragg) frontage
+  // Single pin at 160 Bragg Ave — corner of Bragg & Sanders
   var pinSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 36 48"><path d="M18 0C8.059 0 0 8.059 0 18c0 12.623 18 30 18 30S36 30.623 36 18C36 8.059 27.941 0 18 0z" fill="#d96f20" stroke="#fff" stroke-width="2.5"/><circle cx="18" cy="18" r="7" fill="#fff"/></svg>';
   var icon = L.divIcon({className:'', html: pinSvg, iconSize:[36,48], iconAnchor:[18,48], popupAnchor:[0,-50]});
-  L.marker([32.6107, -85.4845], {icon: icon})
+  L.marker([32.6107, -85.4847], {icon: icon})
     .addTo(map)
-    .bindPopup('<strong>152 Bragg Ave</strong><br/>Commercial Space — NE corner of Sanders &amp; Bragg<br/><em>~9,500 VPD</em>')
+    .bindPopup('<strong>160 Bragg Ave</strong><br/>Corner of Bragg &amp; Sanders<br/><em>~9,500 VPD</em>')
     .openPopup();
-  L.marker([32.6107, -85.4841], {icon: icon})
-    .addTo(map)
-    .bindPopup('<strong>160 Bragg Ave</strong><br/>Commercial Space<br/><em>~9,500 VPD</em>');
 
   // Accurate parcel outline — 181 ft along Bragg (E-W), 202 ft along Sanders (N-S)
   // SW corner = intersection of Sanders St & Bragg Ave
