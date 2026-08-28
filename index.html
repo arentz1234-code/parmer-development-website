@@ -908,4 +908,10 @@ document.querySelectorAll('.mapChoice').forEach(b=>b.addEventListener('click',()
   },5000);
 })();
 </script>
+<script>
+document.querySelectorAll('.dCardFp').forEach(fp=>{
+  const link=fp.closest('.discoverCard').querySelector('.dCardLink');
+  if(link){fp.style.cursor='pointer';fp.addEventListener('click',e=>{if(!e.target.closest('.dFpTabs'))window.location.href=link.href;});}
+});
+</script>
 </html>
