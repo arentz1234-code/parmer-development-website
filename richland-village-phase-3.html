@@ -24,7 +24,7 @@
 .navSocial{display:flex;gap:10px;align-items:center;margin-left:6px}.navSocial a{color:#fff;opacity:.75;display:flex;align-items:center;line-height:1;transition:opacity .2s}.navSocial a:hover{opacity:1}.footerSocial{display:flex;gap:14px;margin-top:14px}.footerSocial a{color:#fff;opacity:.65;display:flex;align-items:center;line-height:1;transition:opacity .2s}.footerSocial a:hover{opacity:1}.fpDisclaimer{font-size:11px;color:#9aa3ab;text-align:center;margin:8px 0 0;font-style:italic;letter-spacing:.02em}
 .fpSideBySide{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 auto;max-width:100%}
 .fpSbsItem{text-align:center}
-.fpSbsItem img{width:100%;height:auto;display:block}
+.fpSbsItem img{width:100%;height:320px;object-fit:contain;display:block}
 .fpSbsItemLabel{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a97a2;margin-top:6px}</style><style>
 /* Mobile widget — start closed */
 @media(max-width:800px){
@@ -115,7 +115,7 @@
         <div class="fpLabel">4 BD · 3.5 BA · 1,772 sq ft</div><p class="fpDisclaimer">For illustration purposes only.</p>
       </div>
       <div class="fpSlide" data-slide="3">
-        <div style="width:100%;aspect-ratio:2/1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f0ece5;gap:10px"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b5ae9e" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#b5ae9e">Floor Plan Coming Soon</span></div>
+        <div style="width:100%;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f0ece5;gap:10px"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b5ae9e" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#b5ae9e">Floor Plan Coming Soon</span></div>
         <div class="fpLabel">4 BD · 4 BA</div><p class="fpDisclaimer">For illustration purposes only.</p>
       </div>
     </div>
@@ -133,52 +133,24 @@
   function fpGo(n){fpSlides[fpCur].classList.remove('active');fpDots[fpCur].classList.remove('active');fpCur=n;fpSlides[fpCur].classList.add('active');fpDots[fpCur].classList.add('active');}
   function fpNav(d){fpGo((fpCur+d+fpSlides.length)%fpSlides.length);}
   </script>
-</section><div class="sectionBlock"><div class="eyebrow">Photos</div><h2>See It for Yourself.</h2><p>Real photos from the 2, 3, and 4 bedroom townhomes.</p>
-<div class="photoTabsRow">
-<button class="active" data-tab="exterior">Exterior</button>
-<button data-tab="twobr">2 Bedroom</button>
-<button data-tab="threebr">4 BD · 3.5 BA</button>
-<button data-tab="fourbr">4 BD · 4 BA</button>
+</section><div class="sectionBlock"><div class="eyebrow">Virtual Tours</div><h2>Walk Through the Homes.</h2><p>Step inside and explore each floor plan in full 360°.</p>
+<div class="tourTabsRow" id="rv3TourTabs">
+<button class="active" data-tour="twobr">2 BD · 2.5 BA</button>
+<button data-tour="threebr">4 BD · 3.5 BA</button>
+<button data-tour="fourbr">4 BD · 4.5 BA</button>
 </div>
-<div class="photoGrid active" data-panel="exterior">
-<img src="assets/phase3-exterior-detail.jpg" alt="Richland Village III exterior detail"/>
-<img src="assets/phase3-2br-exterior.jpg" alt="Richland Village III 2 bedroom townhome exterior"/>
-<img src="assets/phase3-3br-exterior.jpg" alt="Richland Village III 3 bedroom townhome exterior"/>
+<div class="rv3TourPanel" data-panel="twobr" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#f0ece5;margin-top:16px">
+  <iframe src="https://my.matterport.com/show/?m=nAha3DLi7LG" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen allow="xr-spatial-tracking"></iframe>
 </div>
-<div class="photoGrid" data-panel="twobr">
-<img src="assets/phase3-2br-kitchen.jpg" alt="2 bedroom townhome kitchen"/>
-<img src="assets/phase3-2br-living.jpg" alt="2 bedroom townhome living room"/>
-<img src="assets/phase3-2br-master-bedroom.jpg" alt="2 bedroom townhome primary bedroom"/>
-<img src="assets/phase3-2br-master-bath.jpg" alt="2 bedroom townhome primary bathroom"/>
-<img src="assets/phase3-2br-master-bath-b.jpg" alt="2 bedroom townhome primary bathroom, alternate view"/>
-<img src="assets/phase3-2br-bedroom2-a.jpg" alt="2 bedroom townhome second bedroom"/>
-<img src="assets/phase3-2br-bedroom2-b.jpg" alt="2 bedroom townhome second bedroom, alternate view"/>
+<div class="rv3TourPanel" data-panel="threebr" style="display:none;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#f0ece5;margin-top:16px">
+  <iframe src="https://my.matterport.com/show/?m=wo3qGHMzLVR" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen allow="xr-spatial-tracking"></iframe>
 </div>
-<div class="photoGrid" data-panel="threebr">
-<img src="assets/phase3-3br-kitchen.jpg" alt="3 bedroom townhome kitchen"/>
-<img src="assets/phase3-3br-living.jpg" alt="3 bedroom townhome living room"/>
-<img src="assets/phase3-3br-den.jpg" alt="3 bedroom townhome den"/>
-<img src="assets/phase3-3br-master-bedroom.jpg" alt="3 bedroom townhome primary bedroom"/>
-<img src="assets/phase3-3br-master-bath.jpg" alt="3 bedroom townhome primary bathroom"/>
-<img src="assets/phase3-3br-bedroom2.jpg" alt="3 bedroom townhome second bedroom"/>
-<img src="assets/phase3-3br-bath2.jpg" alt="3 bedroom townhome second bathroom"/>
-<img src="assets/phase3-3br-bedroom3.jpg" alt="3 bedroom townhome third bedroom"/>
-<img src="assets/phase3-3br-bath3.jpg" alt="3 bedroom townhome third bathroom"/>
-</div>
-<div class="photoGrid" data-panel="fourbr">
-<img src="assets/phase3-4br-kitchen.jpg" alt="4 bedroom townhome kitchen"/>
-<img src="assets/phase3-4br-living.jpg" alt="4 bedroom townhome living room"/>
-<img src="assets/phase3-4br-living-b.jpg" alt="4 bedroom townhome living room, alternate view"/>
-<img src="assets/phase3-4br-master-bedroom.jpg" alt="4 bedroom townhome primary bedroom"/>
-<img src="assets/phase3-4br-master-bath.jpg" alt="4 bedroom townhome primary bathroom"/>
-<img src="assets/phase3-4br-bedroom2.jpg" alt="4 bedroom townhome second bedroom"/>
-<img src="assets/phase3-4br-bedroom3.jpg" alt="4 bedroom townhome third bedroom"/>
-<img src="assets/phase3-4br-bedroom4.jpg" alt="4 bedroom townhome fourth bedroom"/>
-<img src="assets/phase3-4br-bath-tub.jpg" alt="4 bedroom townhome shared bathroom with tub"/>
+<div class="rv3TourPanel" data-panel="fourbr" style="display:none;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#f0ece5;margin-top:16px">
+  <iframe src="https://my.matterport.com/show/?m=HB5wVuChnxR" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen allow="xr-spatial-tracking"></iframe>
 </div>
 </div><div class="sectionBlock"><div class="eyebrow">Location</div><h2>1256 Shug Jordan Parkway, Auburn, AL</h2><p>Extending the Richland Village story to a new address along Shug Jordan Parkway.</p><iframe class="mapFrame" loading="lazy" src="https://www.google.com/maps?q=1256%20Shug%20Jordan%20Parkway%2C%20Auburn%2C%20AL&output=embed"></iframe></div><div class="infoBand"><div><strong>Schedule a Tour</strong>We’d love to show you around.</div><div><strong>(334) 750-2059</strong>Call or text to schedule your tour.</div><div><strong>1256 Shug Jordan Parkway · Auburn, Alabama</strong>leasing@parmerdevelopment.com</div></div></main>
 <div class="ctaBand"><div><h3>Ready to see it in person?</h3><p>We'd love to show you around.</p></div><div class="ctaActions"><a class="btn2 orange" href="tel:+13347502059">Call (334) 750-2059</a><button class="btn2 ghost" data-open-modal="" style="cursor:pointer;font-family:inherit">Apply Now</button></div></div>
-<footer class="footer"><div class="footerGrid"><div><img class="footerLogo" src="assets/parmer-logo-white-master.png" alt="Parmer Development"><p>Auburn, Alabama based real estate development company creating thoughtful communities designed to stand the test of time.</p></div><div class="footerLinks"><h4>Communities</h4><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village III</a></div><div><h4>Contact</h4><a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a><p>(334) 750-2059</p></div></div><div class="footerSocial"><a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span style="margin-left:8px;font-size:13px;font-weight:600;letter-spacing:.02em">@parmer_development</span></a></div><div class="copyright">© 2026 Parmer Development. All rights reserved.</div></footer><script>document.querySelectorAll('.photoTabsRow button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.photoTabsRow button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.photoGrid').forEach(g=>g.classList.toggle('active',g.dataset.panel===b.dataset.tab));}));</script>
+<footer class="footer"><div class="footerGrid"><div><img class="footerLogo" src="assets/parmer-logo-white-master.png" alt="Parmer Development"><p>Auburn, Alabama based real estate development company creating thoughtful communities designed to stand the test of time.</p></div><div class="footerLinks"><h4>Communities</h4><a href="richland-village.html">Richland Village</a><a href="bragg-brownstones.html">Bragg Avenue Brownstones</a><a href="judd-cottages.html">Judd Avenue Cottages</a><a href="richland-village-phase-3.html">Richland Village III</a></div><div><h4>Contact</h4><a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a><p>(334) 750-2059</p></div></div><div class="footerSocial"><a href="https://www.instagram.com/parmer_development/" target="_blank" rel="noopener" aria-label="Parmer on Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg><span style="margin-left:8px;font-size:13px;font-weight:600;letter-spacing:.02em">@parmer_development</span></a></div><div class="copyright">© 2026 Parmer Development. All rights reserved.</div></footer><script>document.querySelectorAll('#rv3TourTabs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#rv3TourTabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.rv3TourPanel').forEach(p=>{p.style.display=p.dataset.panel===b.dataset.tour?'block':'none';});}));</script>
 
 <style>
 #floatWidget{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end}
