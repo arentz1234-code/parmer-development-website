@@ -185,7 +185,7 @@
         <span class="fwBtnText"><strong>Chat</strong><em>with us</em></span>
         <span class="fwArrow">›</span>
       </a>
-      <a class="fwBtn tour" href="https://www.apartments.com/bragg-avenue-brownstones-auburn-al/x8v6y2n/" target="_blank" rel="noopener">
+      <a class="fwBtn tour" href="index.html#contact">
         <span class="fwIcon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/></svg></span>
         <span class="fwBtnText"><strong>Book</strong><em>a tour</em></span>
         <span class="fwArrow">›</span>
@@ -238,6 +238,10 @@
 </script>
 <script>
 (function(){var mb=document.getElementById('menuBtn');var nav=document.querySelector('.nav');if(!mb||!nav)return;mb.addEventListener('click',function(){nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':'';});nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');document.body.style.overflow='';});});})();
+</script>
+<script>
+(function(){try{fetch('https://parmer-dashboard.vercel.app/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({site:'Bragg Brownstones',path:location.pathname,referrer:document.referrer||null}),keepalive:true})}catch(e){}}
+)();
 </script>
 </body>
 </html>

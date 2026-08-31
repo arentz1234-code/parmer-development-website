@@ -132,7 +132,8 @@
   </div>
 
   <main class="main">
-    <div style="background:var(--cream);padding:60px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:300px"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#b5ae9e" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#b5ae9e">Floor Plan Coming Soon</span></div>
+    <div style="background:var(--cream);padding:32px;border-radius:2px;margin-bottom:24px"><img src="assets/windsor-combined.png" alt="4 Bedroom 3.5 Bath floor plans" style="width:100%;height:auto;display:block;margin:0 auto"/></div>
+    <p class="fpDisclaimer" style="text-align:center;padding:8px 0">For illustration purposes only.</p>
 
     <div style="margin-top:44px">
       <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:10px">Virtual Tour</div>
@@ -161,11 +162,11 @@
       <div class="planGrid">
         <a class="planThumb" href="floorplan-cotswold.html">
           <img src="assets/cotswold-ground.png" alt="2 Bedroom floor plan"/>
-          <div class="planLabel">2 Bedroom<small>Richland Village</small></div>
+          <div class="planLabel">2 Bedroom · 2.5 BA<small>Richland Village</small></div>
         </a>
         <a class="planThumb" href="floorplan-kensington.html">
           <img src="assets/kensington-ground.png" alt="4 Bedroom floor plan"/>
-          <div class="planLabel">4 Bedroom<small>Richland Village</small></div>
+          <div class="planLabel">4 Bedroom · 4.5 BA<small>Richland Village</small></div>
         </a>
         <a class="planThumb" href="bragg-brownstones.html#floorplans">
           <img src="assets/bragg-floorplan-ground.jpg" alt="Bragg Brownstone floor plans"/>
@@ -193,7 +194,7 @@
         <span class="fwBtnText"><strong>Chat</strong><em>with us</em></span>
         <span class="fwArrow">›</span>
       </a>
-      <a class="fwBtn tour" href="mailto:leasing@parmerdevelopment.com?subject=Tour%20Request">
+      <a class="fwBtn tour" href="index.html#contact">
         <span class="fwIcon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/></svg></span>
         <span class="fwBtnText"><strong>Book</strong><em>a tour</em></span>
         <span class="fwArrow">›</span>
@@ -246,6 +247,10 @@
 </script>
 <script>
 (function(){var mb=document.getElementById('menuBtn');var nav=document.querySelector('.nav');if(!mb||!nav)return;mb.addEventListener('click',function(){nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':'';});nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');document.body.style.overflow='';});});})();
+</script>
+<script>
+(function(){try{fetch('https://parmer-dashboard.vercel.app/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({site:'Bragg Brownstones',path:location.pathname,referrer:document.referrer||null}),keepalive:true})}catch(e){}}
+)();
 </script>
 </body>
 </html>
