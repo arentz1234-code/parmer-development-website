@@ -208,57 +208,17 @@
   </div>
 </div>
 <script>
-(function(){var panel=document.getElementById('floatWidgetPanel');var toggle=document.getElementById('fwToggle');if(!toggle||!panel)return;toggle.addEventListener('click',function(){if(panel.classList.contains('hidden')){panel.classList.remove('hidden');toggle.classList.add('open');}else{panel.classList.add('hidden');toggle.classList.remove('open');}});})();
-</script>
-<script>/* widget_mobile_js_added */
-(function(){
-  if(window.innerWidth<=800){
-    var p=document.getElementById('floatWidgetPanel');
-    var t=document.getElementById('fwToggle');
-    if(p){p.classList.remove('open');p.style.opacity='0';p.style.pointerEvents='none';}
-    if(t)t.classList.remove('open');
-  }
-  // Re-wire toggle to use 'open' instead of 'hidden'
-  var panel=document.getElementById('floatWidgetPanel');
-  var toggle=document.getElementById('fwToggle');
-  if(!toggle||!panel)return;
-  // Remove old listeners by cloning
-  var newToggle=toggle.cloneNode(true);
-  toggle.parentNode.replaceChild(newToggle,toggle);
-  newToggle.addEventListener('click',function(){
-    var isOpen=panel.classList.toggle('open');
-    newToggle.classList.toggle('open',isOpen);
-    if(isOpen){panel.style.opacity='';panel.style.pointerEvents='';}
-    // Also close chat if open
-    var box=document.getElementById('chatBox');
-    if(box&&isOpen)box.classList.remove('open');
-  });
-  // Chat trigger
-  var chatTrigger=document.getElementById('askParmerWidget');
-  if(chatTrigger){
-    chatTrigger.addEventListener('click',function(){
-      panel.classList.remove('open');
-      newToggle.classList.remove('open');
-      var box=document.getElementById('chatBox');
-      if(box)box.classList.add('open');
-    });
-  }
-})();
-</script>
-<script>
-(function(){var mb=document.getElementById('menuBtn');var nav=document.querySelector('.nav');if(!mb||!nav)return;mb.addEventListener('click',function(){nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':'';});nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');document.body.style.overflow='';});});})();
-</script>
-<script>
 (function(){
   try{
-    fetch('https://ipwho.is/')
-      .then(function(r){return r.json()})
-      .then(function(g){
-        fetch('https://parmer-dashboard.vercel.app/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({site:'Bragg Brownstones',path:location.pathname,referrer:document.referrer||null,city:g.city||null,region:g.region_code||null,country:g.country_code||null}),keepalive:true});
-      })
-      .catch(function(){
-        fetch('https://parmer-dashboard.vercel.app/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({site:'Bragg Brownstones',path:location.pathname,referrer:document.referrer||null}),keepalive:true});
-      });
+    var v=localStorage.getItem('_pv');
+    if(!v){v=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('_pv',v);}
+    var d={site:'Bragg Brownstones',path:location.pathname,referrer:document.referrer||null,visitor_id:v};
+    fetch('https://ipwho.is/').then(function(r){return r.json()}).then(function(g){
+      d.city=g.city||null;d.region=g.region_code||null;d.country=g.country_code||null;
+      fetch('https://parmer-dashboard.vercel.app/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d),keepalive:true});
+    }).catch(function(){
+      fetch('https://parmer-dashboard.vercel.app/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d),keepalive:true});
+    });
   }catch(e){}
 })();
 </script>
