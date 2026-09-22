@@ -274,6 +274,11 @@
   .tlv2Name{font-size:15px}
   .tlv2CardHead{padding:14px}
 }
+@media(min-width:901px){
+  .tlv2Chevron{display:none}
+  .tlv2CardHead{cursor:default}
+  .tlv2Card:hover .tlv2Body{max-height:600px}
+}
 </style>
 <section class="tlv2" id="journey">
   <div class="tlv2Intro">
@@ -645,6 +650,7 @@
 <script>
 document.querySelectorAll('.tlv2CardHead').forEach(function(head){
   head.addEventListener('click',function(){
+    if(window.innerWidth>=901)return;
     var item=head.closest('.tlv2Item');
     var isOpen=item.classList.contains('open');
     item.classList.toggle('open',!isOpen);
