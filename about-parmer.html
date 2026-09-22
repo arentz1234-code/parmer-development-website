@@ -277,7 +277,16 @@
 @media(min-width:901px){
   .tlv2Chevron{display:none}
   .tlv2CardHead{cursor:default}
-  .tlv2Card:hover .tlv2Body{max-height:600px}
+  .tlv2Body{display:none!important}
+  .tlv2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .tlv2Intro{grid-column:1/-1}
+  .tlv2List{max-width:none}
+  .tlv2PhotoPanel{position:sticky;top:140px;overflow:hidden;background:#f0ece5;aspect-ratio:4/3}
+  .tlv2PhotoPanel img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .35s ease}
+  .tlv2PhotoPanel img.active{opacity:1}
+}
+@media(max-width:900px){
+  .tlv2PhotoPanel{display:none}
 }
 </style>
 <section class="tlv2" id="journey">
@@ -562,6 +571,9 @@
       </div>
     </div>
   </div>
+  <div class="tlv2PhotoPanel" id="tlv2PhotoPanel">
+    <img id="tlv2PanelImg" src="" alt="">
+  </div>
 </section>
 <div aria-hidden="true" class="modal" id="inquiryModal"><div class="modalBox applyBox"><button aria-label="Close" class="close" id="closeModal">&times;</button><div class="applyProgress"><div class="applyProgressBar" id="applyProgressBar"></div></div><div class="applyMeta"><span class="applyStepLabel" id="applyStepLabel">Step 1 of 4</span><button class="applyBack" id="applyBack">&#8592; Back</button></div><div class="applyStep active" data-step="1"><h2 class="applyQ">Which community interests you?</h2><div class="applyChoices"><button class="applyChoice" data-value="Richland Village">Richland Village</button><button class="applyChoice" data-value="Bragg Avenue Brownstones">Bragg Avenue Brownstones</button><button class="applyChoice" data-value="Judd Avenue Cottages">Judd Avenue Cottages</button><button class="applyChoice" data-value="Richland Village III">Richland Village III</button><button class="applyChoice" data-value="General Inquiry">Not sure yet</button></div></div><div class="applyStep" data-step="2"><h2 class="applyQ">How many bedrooms?</h2><div class="applyChoices"><button class="applyChoice" data-value="1 Bedroom">1 Bedroom</button><button class="applyChoice" data-value="2 Bedrooms">2 Bedrooms</button><button class="applyChoice" data-value="3 Bedrooms">3 Bedrooms</button><button class="applyChoice" data-value="4 Bedrooms">4 Bedrooms</button><button class="applyChoice" data-value="5 Bedrooms">5 Bedrooms</button><button class="applyChoice" data-value="Flexible">I&rsquo;m flexible</button></div></div><div class="applyStep" data-step="3"><h2 class="applyQ">When are you hoping to move in?</h2><div class="applyChoices"><button class="applyChoice" data-value="Fall 2027">Fall 2027</button><button class="applyChoice" data-value="Fall 2028">Fall 2028</button><button class="applyChoice" data-value="Fall 2029">Fall 2029</button><button class="applyChoice" data-value="Flexible">I&rsquo;m flexible</button></div></div><div class="applyStep" data-step="4"><h2 class="applyQ">How can we reach you?</h2><div class="applyForm"><div style="display:flex;gap:11px"><input id="applyFirstName" placeholder="First name" type="text" required style="flex:1;min-width:0"/><input id="applyLastName" placeholder="Last name" type="text" required style="flex:1;min-width:0"/></div><input id="applyEmail" placeholder="Email address" type="email" required/><input id="applyPhone" placeholder="Phone" type="tel" required/><textarea id="applyMessage" placeholder="Anything we should know? Pets, parking, move-in flexibility&hellip; (optional)" rows="3" style="border:1.5px solid #dde2e7;font:inherit;font-size:13px;padding:12px 15px;resize:none;outline:none;transition:.18s;box-sizing:border-box;width:100%" onfocus="this.style.borderColor='#d96f20'" onblur="this.style.borderColor='#dde2e7'"></textarea><button class="btn orange" id="applySubmitBtn" type="button">Send My Interest</button></div></div><div class="applyStep" data-step="5"><div class="applyComplete"><div class="applyCompleteIcon">&#10003;</div><h2 class="applyCompleteTitle">You&rsquo;re one step closer to home.</h2><p class="applyCompleteMsg">Our leasing team will be in touch within 24 hours to match you with available units and schedule a walkthrough.</p><div class="applyNextSteps"><div class="applyNextStep"><span class="applyNextNum">1</span><span>We review your interest and match you to available units</span></div><div class="applyNextStep"><span class="applyNextNum">2</span><span>A leasing agent reaches out to schedule a tour</span></div><div class="applyNextStep"><span class="applyNextNum">3</span><span>We walk you through pricing, floor plans, and lease terms</span></div></div><div class="applyContactLine">Questions in the meantime?<br><a href="mailto:leasing@parmerdevelopment.com">leasing@parmerdevelopment.com</a> &nbsp;&middot;&nbsp; <a href="tel:3347502059">(334) 750-2059</a></div><button class="btn orange" id="applyDoneBtn" type="button">Done</button></div></div></div></div>
 
@@ -658,6 +670,20 @@ document.querySelectorAll('.tlv2CardHead').forEach(function(head){
   });
   head.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();head.click();}});
 });
+(function(){
+  var panelImg=document.getElementById('tlv2PanelImg');
+  if(!panelImg)return;
+  document.querySelectorAll('.tlv2Item').forEach(function(item){
+    item.addEventListener('mouseenter',function(){
+      if(window.innerWidth<901)return;
+      var photo=item.querySelector('.tlv2Photo');
+      if(photo){panelImg.src=photo.src;panelImg.alt=photo.alt||'';panelImg.classList.add('active');}
+      else{panelImg.classList.remove('active');}
+    });
+  });
+  var list=document.querySelector('.tlv2List');
+  if(list)list.addEventListener('mouseleave',function(){panelImg.classList.remove('active');});
+})();
 </script>
 <script>
 (function(){
